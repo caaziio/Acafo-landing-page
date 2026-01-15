@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Terms of Service | Acafo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+        name="description"
+        content="Terms of Service for Acafo - AI-powered resume builder for foreigners building careers in Korea."
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/flavi_acafo.png" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    />
+
+    <style>
+        :root {
+            --bg-deep: #020617;
+            --bg-soft: #020314;
+            --blue-main: #2563eb;
+            --blue-soft: #60a5fa;
+            --blue-light: #e0f2fe;
+            --accent: #0ea5e9;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --white: #ffffff;
+            --card-bg: rgba(15, 23, 42, 0.9);
+            --border-subtle: rgba(148, 163, 184, 0.3);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at top, rgba(59, 130, 246, 0.6), transparent 50%),
+                radial-gradient(circle at bottom right, rgba(14, 165, 233, 0.5), transparent 55%),
+                #020617;
+            color: var(--white);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .page-wrapper {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 30;
+            backdrop-filter: blur(14px);
+            background: linear-gradient(to bottom, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.75), transparent);
+            border-bottom: 1px solid rgba(148, 163, 184, 0.3);
+        }
+
+        .header-container {
+            width: 100%;
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0.85rem 1.5rem;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-link {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-image {
+            height: 40px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .nav-cta {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .nav-link {
+            color: rgba(226, 232, 240, 0.9);
+            font-size: 0.9rem;
+            transition: color 0.2s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--blue-light);
+        }
+
+        .nav-lang {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            padding: 0.4rem 0.7rem;
+            border-radius: 999px;
+            border: 1px solid rgba(148, 163, 184, 0.7);
+            background: rgba(15, 23, 42, 0.85);
+            font-size: 0.78rem;
+            color: rgba(226, 232, 240, 0.9);
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        
+        .nav-lang:hover {
+            background: rgba(15, 23, 42, 0.95);
+            border-color: rgba(96, 165, 250, 0.5);
+            color: rgba(226, 232, 240, 1);
+        }
+
+        .nav-lang-icon {
+            width: 16px;
+            height: 16px;
+            border-radius: 999px;
+            border: 1px solid rgba(148, 163, 184, 0.8);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+        }
+
+        /* Main Content */
+        main {
+            flex: 1;
+            padding: 3rem 0 4rem;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .terms-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .terms-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #60a5fa, #38bdf8);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .terms-updated {
+            font-size: 0.9rem;
+            color: rgba(148, 163, 184, 0.9);
+        }
+
+        .terms-content {
+            background: rgba(15, 23, 42, 0.6);
+            border-radius: 1rem;
+            padding: 2.5rem;
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .digital-content-warning {
+            background: rgba(220, 38, 38, 0.15);
+            border: 2px solid rgba(220, 38, 38, 0.4);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            color: rgba(254, 202, 202, 0.95);
+            font-weight: 500;
+            line-height: 1.7;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.95rem;
+        }
+
+        .terms-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .terms-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-number {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--blue-soft);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: rgba(226, 232, 240, 0.95);
+        }
+
+        .section-content {
+            font-size: 0.95rem;
+            color: rgba(203, 213, 225, 0.9);
+            line-height: 1.7;
+        }
+
+        .section-content p {
+            margin-bottom: 1rem;
+        }
+
+        .section-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-content ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+            list-style-type: disc;
+        }
+
+        .section-content ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+            list-style-type: decimal;
+        }
+
+        .section-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .section-content strong {
+            color: rgba(226, 232, 240, 0.95);
+            font-weight: 600;
+        }
+
+        .highlight {
+            color: var(--blue-soft);
+        }
+
+        /* Footer */
+        footer {
+            padding: 1.6rem 0 2rem;
+            border-top: 1px solid rgba(30, 64, 175, 0.7);
+            margin-top: 2.4rem;
+        }
+
+        .footer-inner {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 1.5rem;
+            font-size: 0.78rem;
+            color: rgba(148, 163, 184, 0.95);
+        }
+
+        .footer-disclaimer {
+            flex: 1 1 100%;
+            font-size: 0.78rem;
+            color: rgba(148, 163, 184, 0.9);
+            line-height: 1.5;
+            margin-bottom: 0.3rem;
+        }
+
+        .footer-column {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .footer-heading {
+            font-weight: 600;
+            font-size: 0.8rem;
+            color: rgba(226, 232, 240, 0.95);
+            margin-bottom: 0.2rem;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .footer-link {
+            color: rgba(148, 163, 184, 0.95);
+            transition: color 0.2s ease;
+        }
+
+        .footer-link:hover {
+            color: var(--blue-light);
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 0.6rem;
+            margin-top: 0.4rem;
+        }
+
+        .footer-social-link {
+            width: 26px;
+            height: 26px;
+            border-radius: 999px;
+            border: 1px solid rgba(148, 163, 184, 0.5);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            color: rgba(148, 163, 184, 0.95);
+            transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+        }
+
+        .footer-social-link:hover {
+            background: rgba(37, 99, 235, 0.15);
+            border-color: rgba(59, 130, 246, 0.9);
+            color: rgba(226, 232, 240, 0.98);
+        }
+
+        /* Mobile Footer Layout */
+        @media (max-width: 768px) {
+            .footer-inner {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-items: flex-start;
+                justify-content: space-between;
+                gap: 1rem;
+            }
+
+            .footer-copyright {
+                order: 3;
+                width: 100%;
+                text-align: center;
+                margin-top: 1.5rem;
+                padding-top: 1.5rem;
+                border-top: 1px solid rgba(148, 163, 184, 0.2);
+            }
+
+            .footer-links-column {
+                order: 1;
+                flex: 0 0 auto;
+            }
+
+            .footer-social-column {
+                order: 2;
+                flex: 0 0 auto;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-disclaimer {
+                order: 0;
+                width: 100%;
+                text-align: left;
+            }
+
+            .footer-links {
+                display: flex;
+                flex-direction: column;
+                gap: 0.25rem;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .terms-title {
+                font-size: 2rem;
+            }
+
+            .terms-content {
+                padding: 1.5rem;
+            }
+
+            .digital-content-warning {
+                padding: 1rem;
+                font-size: 0.85rem;
+            }
+
+            .section-title {
+                font-size: 1.1rem;
+            }
+
+            .section-content {
+                font-size: 0.9rem;
+            }
+
+            main {
+                padding: 2rem 0 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+        <!-- HEADER -->
+        <header>
+            <div class="header-container">
+                <nav class="nav">
+                    <a href="/" class="logo-link">
+                        <img src="assets/images/Logo_acafo.png" alt="Acafo" class="logo-image" />
+                    </a>
+                    <div class="nav-cta">
+                        <a href="/ko/terms" class="nav-lang" aria-label="Change language">
+                            <span class="nav-lang-icon">🌐</span>
+                            <span>EN / KR</span>
+                        </a>
+                        <a href="/" class="nav-link">Home</a>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <!-- MAIN CONTENT -->
+        <main>
+            <div class="container">
+                <div class="terms-header">
+                    <h1 class="terms-title">Terms of Service</h1>
+                    <p class="terms-updated">Last Updated: December 2025</p>
+                </div>
+
+                <div class="terms-content">
+                    <!-- Introduction -->
+                    <div class="section-content" style="margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(148, 163, 184, 0.2);">
+                        <p>
+                            Welcome to Acafo (hereinafter referred to as the "Platform," "we," or "us"). These terms and conditions create a contract ("Agreement") between you ("User" or "Buyer") and Acafo and govern your use of the Services.
+                        </p>
+                        <p>
+                            Please read the Agreement carefully. By placing an order, registering, logging in, or using any of the Platform's services, you acknowledge that you have read, understood, and agreed to be bound by these Terms.
+                        </p>
+                        <p>
+                            If you are a Consumer, you will benefit from any mandatory provisions of the law of the country in which you are resident. Nothing in this Agreement, including the Governing Law clause, affects your rights as a Consumer to rely on such mandatory provisions of local law.
+                        </p>
+                    </div>
+
+                    <!-- Digital Content Warning -->
+                    <div class="digital-content-warning">
+                        WHERE A PRODUCT IS DIGITAL CONTENT WHICH IS IMMEDIATELY MADE AVAILABLE, BY DOWNLOADING OR OTHERWISE ACQUIRING THE PRODUCT, YOU CONSENT TO IMMEDIATE PERFORMANCE OF THIS AGREEMENT AND ACKNOWLEDGE THAT YOU WILL LOSE YOUR RIGHT OF WITHDRAWAL FROM THIS AGREEMENT ONCE THE DOWNLOAD OR APPLICABLE TRANSMISSION OF THE DIGITAL CONTENT HAS BEGUN.
+                    </div>
+
+                    <!-- Section 1 -->
+                    <div class="terms-section">
+                        <div class="section-number">1. Definitions and Interpretation</div>
+                        <h2 class="section-title">Definitions and Interpretation</h2>
+                        <div class="section-content">
+                            <p>
+                                For clarity, the following definitions apply (including but not limited to):
+                            </p>
+                            <p>
+                                <strong>Company / Acafo:</strong> The provider and operator of the Platform.
+                            </p>
+                            <p>
+                                <strong>User / You / Buyer:</strong> Any individual or entity using the Platform, including individual 
+                                users (job seekers) and enterprise users (employers, headhunters, agencies, contractors, etc.).
+                            </p>
+                            <p>
+                                <strong>"Consumer"</strong> means a User who is purchasing the Services or Product wholly or mainly for their personal use.
+                            </p>
+                            <p>
+                                <strong>"Confidential Information"</strong> means any commercial, financial or technical information; information relating to the Product; the Services; plans or strategy, know-how or trade secrets which is obviously confidential or has been identified as such, or which is developed by a party in performing its obligations under, or otherwise pursuant to this Agreement.
+                            </p>
+                            <p>
+                                <strong>"Digital Content"</strong> means data which is produced and supplied in digital form, including but not limited to software, applications, templates, documents, and any digital materials provided through the Platform.
+                            </p>
+                            <p>
+                                <strong>"Product"</strong> means the software, digital products, Digital Content, and services licensed or provided for use by the User under the terms of this Agreement.
+                            </p>
+                            <p>
+                                <strong>Services:</strong> Online and offline services provided by the Platform, including but 
+                                not limited to: resume building, portfolios, AI resume review and audit, resume translation to 
+                                Korean, job search and matching, job postings, talent search, AI coaching and career guidance, 
+                                skill discovery, mobile applications (App), APIs and third-party integrations, as well as offline 
+                                services.
+                            </p>
+                            <p>
+                                <strong>User Content:</strong> Any information or material uploaded, submitted, or generated through 
+                                the Platform, including but not limited to personal profiles, resumes, portfolios, posts, messages, 
+                                company information, job descriptions, reviews, and feedback.
+                            </p>
+                            <p>
+                                <strong>Personal Data:</strong> Personally identifiable information as defined by applicable laws.
+                            </p>
+                            <p>
+                                <strong>"Transaction"</strong> means acquiring the Product via our Services for free or for a charge.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Section 2 -->
+                    <div class="terms-section">
+                        <div class="section-number">2. Applicability of Terms & Additional Documents</div>
+                        <h2 class="section-title">Applicability of Terms & Additional Documents</h2>
+                        <div class="section-content">
+                            <p>
+                                These Terms apply to all users and all services. Certain services or plans may have additional 
+                                terms or agreements (e.g., Service Level Agreements (SLA), Privacy Policy, Cookie Policy, Community 
+                                Guidelines; collectively, "Additional Documents"). Additional Documents form part of these Terms. 
+                                In case of conflict, the Additional Document prevails.
+                            </p>
+                            <p>
+                                If you agree to these Terms on behalf of a company or organization, you represent that you are 
+                                duly authorized, and these Terms are binding upon that entity.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Section 3: Contract Formation -->
+                    <div class="terms-section">
+                        <div class="section-number">3. Contract Formation</div>
+                        <h2 class="section-title">Contract Formation</h2>
+                        <div class="section-content">
+                            <p>
+                                By completing a Transaction through our Services, you make a binding offer to enter into a contract with Acafo, subject to the terms of this Agreement. The Transaction process consists of the following steps:
+                            </p>
+                            <ol>
+                                <li><strong>Step one:</strong> You select the desired Product and agree to the terms of this Agreement.</li>
+                                <li><strong>Step two:</strong> Your personal data, required for the Transaction, delivery of the Product and submitting invoices to you, is collected by us in accordance with the Privacy section below.</li>
+                                <li><strong>Step three:</strong> We will send you an email to the email address you provided. The email will confirm your order and provide access to the Product (where applicable) and invoice/receipt.</li>
+                                <li><strong>Final step:</strong> Your Agreement with Acafo is concluded upon the successful transmission of the Product and payment of the invoice in full (for paid Transactions), subject to the terms of this Agreement.</li>
+                            </ol>
+                            <p>
+                                You agree to receipt of all invoices and receipts in an electronic format, which includes email. Product prices may change at any time. When providing us with your information, you must ensure that it is up-to-date and accurate. Acafo will not be responsible for the event of non-receipt of the Product due to incorrect information being provided by you. To make amendments to your order, please contact us. We reserve the right to not fulfill and to cancel orders if we do not receive payment.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Section 4 -->
+                    <div class="terms-section">
+                        <div class="section-number">4. Accounts, Identity & Security</div>
+                        <h2 class="section-title">Accounts, Identity & Security</h2>
+                        <div class="section-content">
+                            <p>
+                                <strong>Eligibility and Authenticity:</strong> You must provide true, accurate, and up-to-date 
+                                information. Identity impersonation or falsification is prohibited. Minors require consent from 
+                                a legal guardian.
+                            </p>
+                            <p>
+                                <strong>Account Use:</strong> Personal accounts are for individual use only. Enterprise accounts 
+                                may only be used by authorized personnel within the company, within the scope of their authorization. 
+                                Accounts may not be rented, transferred, or shared with third parties.
+                            </p>
+                            <p>
+                                <strong>Security:</strong> You are responsible for safeguarding your account credentials and 
+                                activities conducted through your account. Notify us immediately of unauthorized use.
+                            </p>
+                            <p>
+                                <strong>Review Rights:</strong> To maintain security and service quality, we reserve the right 
+                                to review, restrict, or refuse suspicious applications (see Section 8).
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Section 5 -->
+                    <div class="terms-section">
+                        <div class="section-number">5. Services & Flexibility</div>
+                        <h2 class="section-title">Services & Flexibility</h2>
+                        <div class="section-content">
+                            <p>
+                                Services include those listed in Section 1, as well as future additions or adjustments. Actual 
+                                scope and availability are as described on the Platform's pages, plan details, or announcements.
+                            </p>
+                            <p>
+                                We may add, modify, suspend, or terminate some or all services due to operational or legal needs. 
+                                For paid plans, if a service is permanently terminated, compensation or refund principles will be 
+                                announced (see Section 13). To the extent possible, Acafo will warn you in advance of any modification, 
+                                suspension or discontinuance of the Service.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Section 6 -->
+                    <div class="terms-section">
+                        <div class="section-number">6. Software and Digital Content</div>
+                        <h2 class="section-title">Software and Digital Content</h2>
+                        <div class="section-content">
+                            <p>
+                                Where any Product supplied is, or includes, software ("Software") or Digital Content, the Software 
+                                and Digital Content is licensed by Acafo pursuant to this Agreement. All rights not expressly granted 
+                                to you are reserved by Acafo and its licensors.
+                            </p>
+                            <p>
+                                You may have the benefit of additional warranties or guarantees with the Products supplied and you 
+                                should refer to the relevant documentation supplied with the Product in this regard.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Section 7 -->
+                    <div class="terms-section">
+                        <div class="section-number">7. User Content: Rights, Licenses & Visibility</div>
+                        <h2 class="section-title">User Content: Rights, Licenses & Visibility</h2>
+                        <div class="section-content">
+                            <p>
+                                <strong>Ownership:</strong> Intellectual property rights in User Content remain with you or the 
+                                original rights holder. The Platform does not claim ownership but requires a license to use such 
+                                content as necessary for services. Derivative works or annotations generated by the Platform (e.g., 
+                                classification, normalization, embeddings, indexing, recommendation signals, database compilation) 
+                                remain the property of the Platform or legitimate rights holders.
+                            </p>
+                            <p>
+                                <strong>License to Platform (Purpose-Limited):</strong> To provide, operate, improve, and secure 
+                                services, and for matching, support, security, statistics, and product analysis (aggregated or 
+                                de-identified when feasible), you grant the Platform a global, non-exclusive, royalty-free, 
+                                sublicensable, and transferable license limited to reproducing, formatting, storing, backing up, 
+                                transmitting, displaying, and distributing your User Content. We will not use your content beyond 
+                                these purposes.
+                            </p>
+                            <p>
+                                <strong>Visibility & Permissions:</strong> You may set the visibility of resumes, portfolios, and 
+                                profiles. The Platform will provide access based on your settings. Features such as share links, 
+                                resume downloads/exports, APIs, or third-party integrations will function within the scope of your 
+                                settings.
+                            </p>
+                            <p>
+                                <strong>Third-Party Sharing Restrictions:</strong> Data accessed via the Platform (e.g., resumes, 
+                                contact details, application history) may only be used for the agreed purpose within the authorized 
+                                entity. Resale, sublicensing, publishing, or sharing with third parties is prohibited unless explicitly 
+                                permitted.
+                            </p>
+                            <p>
+                                <strong>Removal & Retention:</strong> You may edit or remove User Content. Backup copies may be 
+                                retained for auditing, dispute resolution, or legal compliance but will not be publicly available. 
+                                Content already shared may persist with third parties.
+                            </p>
+                            <p>
+                                <strong>User Warranties:</strong> You warrant legal authority to submit User Content, that it does 
+                                not infringe rights or laws, and that personal data complies with applicable laws.
+                            </p>
+                            <p>
+                                <strong>Platform Database Rights:</strong> Rights in derivative annotations, embeddings, AI-generated 
+                                outputs, and compilations remain with the Platform or legitimate holders. Unauthorized reproduction, 
+                                distribution, resale, or database creation is prohibited.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Section 8 -->
+                    <div class="terms-section">
+                        <div class="section-number">8. Personal Data & Privacy</div>
+                        <h2 class="section-title">Personal Data & Privacy</h2>
+                        <div class="section-content">
+                            <p>
+                                <strong>Purpose of Collection:</strong> We collect and process personal data for providing/improving 
+                                services, matching, recruitment, security, support, and legal compliance. See our Privacy Policy.
+                            </p>
+                            <p>
+                                Acafo will maintain appropriate administrative, physical, and technical safeguards for protection of 
+                                the security, confidentiality and integrity of User data, as described in Acafo's Privacy Policy 
+                                which can be found on our Platform (or such other URL that Acafo may provide from time to time).
+                            </p>
+                            <p>
+                                <strong>Cross-Border & Outsourcing:</strong> Personal data may be stored/processed outside your 
+                                region in compliance with laws, under appropriate safeguards.
+                            </p>
+                            <p>
+                                <strong>Data Subject Rights:</strong> You may exercise rights under the Privacy Policy and applicable 
+                                laws.
+                            </p>
+                            <p>
+                                <strong>User Consent:</strong> By registering, you agree that your profile/resume visibility settings 
+                                may allow enterprise users to access your data, subject to paid plans and lawful recruitment purposes.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Section 9 -->
+                    <div class="terms-section">
+                        <div class="section-number">9. Data Protection, Non-Competition & Anti-Scraping</div>
+                        <h2 class="section-title">Data Protection, Non-Competition & Anti-Scraping</h2>
+                        <div class="section-content">
+                            <p>
+                                You agree to the following:
+                            </p>
+                            <p>
+                                <strong>Usage Restrictions:</strong> Data (resumes, jobs, company info, reports) may only be used 
+                                per these Terms and plan scope. Candidate personal data may not be used for unrelated purposes such 
+                                as marketing.
+                            </p>
+                            <p>
+                                <strong>No Unauthorized Sharing/Resale:</strong> Unauthorized sharing, resale, sublicensing, 
+                                database creation, or integration into competing services is prohibited.
+                            </p>
+                            <p>
+                                <strong>Non-Competition Restrictions:</strong> Competing recruitment, ATS, HR tech, or data services 
+                                may not register or access without written consent.
+                            </p>
+                            <p>
+                                <strong>No Automated Access:</strong> Use of crawlers, bots, scrapers, or automated tools without 
+                                consent is prohibited. Abnormal usage may lead to restriction.
+                            </p>
+                            <p>
+                                <strong>No AI Training:</strong> Platform data may not be used to train, fine-tune, or evaluate 
+                                models without written consent.
+                            </p>
+                            <p>
+                                <strong>Quota & Rate Limits:</strong> The Platform may impose query, view, download, and API limits.
+                            </p>
+                            <p>
+                                <strong>No Redistribution to Competitors:</strong> Redistributing Platform data to competing systems 
+                                or training services is prohibited.
+                            </p>
+                            <p>
+                                <strong>Compliance Obligations:</strong> Users are responsible for compliance with applicable laws 
+                                (e.g., GDPR, CCPA, PIPL, Taiwan PDPA).
+                            </p>
+                            <p>
+                                <strong>Audits & Sanctions:</strong> We may audit suspected misuse and restrict or terminate accounts, 
+                                reserving legal rights.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Section 10 -->
+                    <div class="terms-section">
+                        <div class="section-number">10. Service Interruptions & Maintenance</div>
+                        <h2 class="section-title">Service Interruptions & Maintenance</h2>
+                        <div class="section-content">
+                            <p>
+                                <strong>Scheduled Maintenance:</strong> We may perform upgrades/maintenance with advance notice.
+                            </p>
+                            <p>
+                                <strong>Emergency Maintenance:</strong> In urgent cases, services may be suspended without notice.
+                            </p>
+                            <p>
+                                <strong>Force Majeure:</strong> We are not liable for interruptions due to uncontrollable events 
+                                (e.g., disasters, wars, outages, attacks, viruses, interference, hacking or other security intrusion). 
+                                You shall be responsible for backing up your own system, including any Product purchased, acquired 
+                                or rented using the Service.
+                            </p>
+                            <p>
+                                <strong>SLA:</strong> Service Level Agreements in paid plans prevail.
+                            </p>
+                            <p>
+                                Acafo further reserves the right to modify, suspend, or discontinue the Services (or any part thereof) 
+                                at any time with or without notice to you, and Acafo will not be liable to you or to any third party 
+                                should it exercise such rights.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Section 11 -->
+                    <div class="terms-section">
+                        <div class="section-number">11. Content Removal & Notice Mechanisms</div>
+                        <h2 class="section-title">Content Removal & Notice Mechanisms</h2>
+                        <div class="section-content">
+                            <p>
+                                <strong>Notice & Takedown:</strong> Rights holders may submit written notices of infringement.
+                            </p>
+                            <p>
+                                <strong>Process:</strong> Upon valid notice, content may be removed or restricted.
+                            </p>
+                            <p>
+                                <strong>Counter-Notice:</strong> Providers may contest removal.
+                            </p>
+                            <p>
+                                <strong>Repeat Violations:</strong> Repeated infringements may lead to suspension or termination.
+                            </p>
+                            <p>
+                                <strong>Abuse Liability:</strong> False or malicious notices incur liability.
+                            </p>
+                            <p>
+                                <strong>Copyright Notice:</strong> If you believe that any Products available through the Services 
+                                infringe a copyright claimed by you, please contact Acafo at <a href="mailto:hello@acafo.io" class="highlight">hello@acafo.io</a>.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Section 12 -->
+                    <div class="terms-section">
+                        <div class="section-number">12. Payment, Taxes and Invoicing</div>
+                        <h2 class="section-title">Payment, Taxes and Invoicing</h2>
+                        <div class="section-content">
+                            <p>
+                                <strong>Billing & Taxes:</strong> Acafo will charge your chosen payment method for any paid Transactions, 
+                                including any applicable taxes according to the tax jurisdiction in which the Transaction takes place. 
+                                The pricing, billing cycle, features, and usage limits of each plan or product are subject to the most 
+                                recent information provided on the plan or subscription page.
+                            </p>
+                            <p>
+                                Upon successful payment, an electronic receipt will be sent to the registered email address. You may 
+                                download an electronic receipt through the payment system (e.g., Stripe; actual providers may vary by 
+                                region or plan) as indicated on the checkout page or related notification, or contact customer support 
+                                at <a href="mailto:hello@acafo.io" class="highlight">hello@acafo.io</a> for further assistance.
+                            </p>
+                            <p>
+                                <strong>Product Prices:</strong> Product prices may change at any time. If technical problems prevent 
+                                or unreasonably delay delivery of the Product, your exclusive and sole remedy is either replacement 
+                                of the Product or refund of the price paid, as determined by Acafo.
+                            </p>
+                            <p>
+                                <strong>Payment by Wire Transfer:</strong> It's your responsibility to provide us with the correct 
+                                payment details (your unique bank transfer reference number), Company VAT / sales tax code and order 
+                                information to avoid delays in your order fulfilment, as we may be unable to reconcile or refund such 
+                                transactions. Orders where payments are made via wire transfer may have different refund eligibility 
+                                (see Section 14).
+                            </p>
+                            <p>
+                                <strong>Pre-orders:</strong> If you pre-order the Product, you'll be charged upfront, during which 
+                                time you can request a refund for whatever reason until the content is delivered, after which the 
+                                standard refund policy applies.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Section 13 -->
+                    <div class="terms-section">
+                        <div class="section-number">13. Fees, Subscriptions & Refunds</div>
+                        <h2 class="section-title">Fees, Subscriptions & Refunds</h2>
+                        <div class="section-content">
+                            <p>
+                                <strong>Auto-Renewal & Cancellation:</strong> Subscriptions auto-renew until cancelled. You may cancel 
+                                anytime by contacting us at <a href="mailto:hello@acafo.io" class="highlight">hello@acafo.io</a> at least 
+                                48 hours before the end of the current billing period. Please make sure you provide your order number 
+                                and the email address used to purchase the Product. Your cancellation will take effect at the next payment 
+                                date. There are no refunds on unused subscription periods.
+                            </p>
+                            <p>
+                                <strong>Trial Periods:</strong> Certain subscriptions may offer a free trial before charging you. If you 
+                                decide to unsubscribe from a subscription before we start charging your payment method, you must cancel 
+                                the subscription before the expiration of the trial period by contacting us. Unless canceled, trials 
+                                convert to paid subscriptions. If we cannot charge your payment method for any reason (such as expiration 
+                                or insufficient funds), and you have not cancelled your subscription, you remain responsible for any 
+                                uncollected amounts. We reserve the right to cancel your subscription if we are unable to successfully 
+                                charge your payment method to renew your subscription.
+                            </p>
+                            <p>
+                                <strong>Upgrades/Downgrades:</strong> Upgrades apply immediately; downgrades apply next cycle. Fees 
+                                already paid are non-refundable.
+                            </p>
+                            <p>
+                                <strong>Refund Policy:</strong> Refunds are provided at the sole discretion of Acafo and on a case-by-case 
+                                basis and may be refused. Acafo will refuse a refund request if we find evidence of fraud, refund abuse, 
+                                or other manipulative behaviour that entitles Acafo to counterclaim the refund.
+                            </p>
+                            <p>
+                                This does not affect your rights as a Consumer in relation to Products which are not as described, faulty 
+                                or not fit for purpose. For Consumer cancellation rights, see Section 14.
+                            </p>
+                            <ul>
+                                <li>First-time subscribers may request refunds within 14 days of payment (for Consumers, see Section 14).</li>
+                                <li>Payment processor fees are non-refundable.</li>
+                                <li>Purchases via third-party stores follow their refund policies.</li>
+                                <li>Abuse of refunds may result in denial or termination.</li>
+                                <li>For wire transfer payments, see Section 12.</li>
+                            </ul>
+                            <p>
+                                <strong>Price/Plan Adjustments:</strong> We'll notify you if the price of a subscription increases and, 
+                                if required, seek your consent to continue. Notice will be given at least 7 days (or as required by law) 
+                                in advance. New prices apply at renewal or for new purchases.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Section 14: Consumer Right to Cancel -->
+                    <div class="terms-section">
+                        <div class="section-number">14. Consumer Right to Cancel</div>
+                        <h2 class="section-title">Consumer Right to Cancel</h2>
+                        <div class="section-content">
+                            <p>
+                                If you are a Consumer and unless the below exception applies, you have the right to cancel this Agreement 
+                                and return the Product within 14 days without giving any reason. The cancellation period will expire 
+                                after 14 days from the day after completion of the Transaction.
+                            </p>
+                            <p>
+                                To meet the cancellation deadline, it is sufficient that you send us your communication concerning your 
+                                exercise of the cancellation right before the expiration of the 14 day period.
+                            </p>
+                            <p>
+                                To cancel your order, you must inform Acafo of your decision. To ensure immediate processing, please do 
+                                so by contacting us at <a href="mailto:hello@acafo.io" class="highlight">hello@acafo.io</a> or via "Contact Us / Help Center" 
+                                on the Platform. Please note that in respect of subscription services your right to cancel is only present 
+                                following the initial subscription and not upon each automatic renewal.
+                            </p>
+                            <p>
+                                You also have the right to inform us using a model cancellation form or by making any other clear, unambiguous 
+                                statement through our available communication channels. If you use our "Contact Us" form online, we will 
+                                communicate acknowledgment of receipt of your cancellation request to you without delay.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Section 15: Effect of Cancellation -->
+                    <div class="terms-section">
+                        <div class="section-number">15. Effect of Cancellation</div>
+                        <h2 class="section-title">Effect of Cancellation</h2>
+                        <div class="section-content">
+                            <p>
+                                If you cancel this Agreement as permitted above, we will reimburse to you all payments received from you.
+                            </p>
+                            <p>
+                                We will make the reimbursement without undue delay, and not later than 14 days after the day on which we 
+                                are informed about your decision to cancel this Agreement.
+                            </p>
+                            <p>
+                                We will make the reimbursement using the same means of payment as you used for the initial transaction and 
+                                you will not incur any fees as a result of the reimbursement.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Section 16: Exception to the Right to Cancel -->
+                    <div class="terms-section">
+                        <div class="section-number">16. Exception to the Right to Cancel</div>
+                        <h2 class="section-title">Exception to the Right to Cancel</h2>
+                        <div class="section-content">
+                            <p>
+                                Your right as a Consumer to cancel your order does not apply to the supply of Digital Content that you 
+                                have started to download, stream or otherwise acquire and to Products which you have had the benefit of.
+                            </p>
+                            <p>
+                                This exception applies when you have explicitly consented to immediate performance and acknowledged that 
+                                you will lose your right of withdrawal once the download or applicable transmission of the Digital Content 
+                                has begun (as set out in the warning at the top of these Terms).
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Section 17: Indirect Sales Tax Refund Policy -->
+                    <div class="terms-section">
+                        <div class="section-number">17. Indirect Sales Tax Refund Policy</div>
+                        <h2 class="section-title">Indirect Sales Tax Refund Policy</h2>
+                        <div class="section-content">
+                            <p>
+                                If you've been charged sales tax on your purchase and are registered for sales tax in the country of purchase, 
+                                you may be entitled to a refund of the sales tax amount if permitted by the laws applicable in such country. 
+                                Sales taxes include VAT, GST, Consumption Tax and others as applicable from time to time.
+                            </p>
+                            <p>
+                                You must contact Acafo within 60 days after completing the purchase to be eligible for a sales tax refund. 
+                                This refund will only be processed upon the provision of a valid sales tax code for your country.
+                            </p>
+                            <p>
+                                All refund requests received after 60 days from the date of the Transaction will not be processed.
+                            </p>
+                            <p>
+                                For wire transfers, please refer to Section 12 for more information regarding eligibility of sales tax refunds.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Section 18 -->
+                    <div class="terms-section">
+                        <div class="section-number">18. Termination and Suspension of Services</div>
+                        <h2 class="section-title">Termination and Suspension of Services</h2>
+                        <div class="section-content">
+                            <p>
+                                If you fail, or Acafo suspects that you have failed, to comply with any of the provisions of this Agreement, 
+                                Acafo may, without notice to you: (i) terminate this Agreement, and you will remain liable for all amounts 
+                                due up to and including the date of termination; and/or (ii) terminate your license to the Product; and/or 
+                                (iii) preclude your access to the Services.
+                            </p>
+                            <p>
+                                Where Acafo suspects that fraudulent activities are being conducted by you, we have the right to cancel and 
+                                block your usage of our Services without notice. Acafo may also liaise with relevant authorities for law 
+                                enforcement and financial crime prevention reasons and pass your details on to authorities should evidence 
+                                be found confirming malicious or fraudulent or other criminal activity.
+                            </p>
+                            <p>
+                                Termination of the Service will not affect any rights accrued thereunder or the Product that you have already 
+                                acquired.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Section 19 -->
+                    <div class="terms-section">
+                        <div class="section-number">19. Warranties & Liability Limitations</div>
+                        <h2 class="section-title">Warranties & Liability Limitations</h2>
+                        <div class="section-content">
+                            <p>
+                                <strong>As-Is Basis:</strong> Services are provided "as is" without warranties, express, implied or statutory 
+                                regarding the Services to the full extent permitted by law and in particular Acafo does not warrant that: 
+                                (i) your use of the Services will be uninterrupted or error-free; (ii) the Services or Products will be free 
+                                from corruption, attack, viruses, interference, hacking or other security intrusion.
+                            </p>
+                            <p>
+                                <strong>No Indirect Liability:</strong> In no event will Acafo, its partners, service providers, affiliates 
+                                or any of their respective directors, officers, employees or agents be liable to the User for any special, 
+                                incidental, indirect, punitive, exemplary or consequential damages, whether foreseeable or unforeseeable, which 
+                                may arise out of or in connection with this Agreement, regardless of whether either party has been apprised 
+                                of the possibility or likelihood of such damages occurring, or whether claims are based or remedies are sought 
+                                in contract or tort otherwise.
+                            </p>
+                            <p>
+                                <strong>Liability Cap:</strong> To the extent permitted by law, liability is capped at amounts paid in the 
+                                prior 12 months.
+                            </p>
+                            <p>
+                                <strong>Third-Party Services:</strong> Acafo is not responsible or liable for third party materials included 
+                                within or linked from the Product or the Services, or for third-party services.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Section 20 -->
+                    <div class="terms-section">
+                        <div class="section-number">20. Intellectual Property</div>
+                        <h2 class="section-title">Intellectual Property</h2>
+                        <div class="section-content">
+                            <p>
+                                You agree that the Services, including but not limited to content, graphics, user interface, audio clips, 
+                                video clips, editorial content, and the scripts and software used to implement the Services, contain proprietary 
+                                information and material that is owned by Acafo and/or its licensors, and is protected by applicable intellectual 
+                                property and other laws, including but not limited to copyright. You agree that you will not use such proprietary 
+                                information or materials in any way whatsoever except for in compliance with this Agreement. No portion of the 
+                                Services may be reproduced in any form or by any means, except as expressly permitted by this Agreement.
+                            </p>
+                            <p>
+                                You agree not to modify, rent, loan, sell, or distribute the Services or Product in any manner, and you shall 
+                                not exploit the Services in any manner not expressly authorised.
+                            </p>
+                            <p>
+                                The Acafo name, the Acafo logo and other Acafo trademarks, service marks, graphics, and logos used in connection 
+                                with the Services are trademarks or registered trademarks of Acafo. You are granted no right or license with 
+                                respect to any of the aforesaid trademarks.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Section 21 -->
+                    <div class="terms-section">
+                        <div class="section-number">21. Changes & Notifications</div>
+                        <h2 class="section-title">Changes & Notifications</h2>
+                        <div class="section-content">
+                            <p>
+                                Acafo reserves the right at any time to modify this Agreement and to add new or additional terms or conditions 
+                                on your use of the Services. Such modifications and additional terms and conditions will be communicated to you 
+                                and if accepted, will be effective immediately and will be incorporated into this Agreement and will apply to 
+                                the purchase of any further Products through the Services.
+                            </p>
+                            <p>
+                                Major changes affecting paid services will be notified at least 7 days (or as required by law) in advance. 
+                                Continued use indicates agreement. In the event you refuse to accept such changes, Acafo will have the right 
+                                to terminate the Agreement.
+                            </p>
+                            <p>
+                                <strong>Price/Plan Changes:</strong> At least 7 days' notice (or as required by law) will be given. New prices 
+                                apply to renewals or new purchases.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Section 22: Confidentiality -->
+                    <div class="terms-section">
+                        <div class="section-number">22. Confidentiality</div>
+                        <h2 class="section-title">Confidentiality</h2>
+                        <div class="section-content">
+                            <p>
+                                The parties agree that any Confidential Information provided under this Agreement shall be held and maintained 
+                                in strict confidence. Each party agrees to protect the confidentiality of such information in a manner consistent 
+                                with the way a reasonable person would protect similar Confidential Information.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Section 23: Waiver and Severability -->
+                    <div class="terms-section">
+                        <div class="section-number">23. Waiver and Severability</div>
+                        <h2 class="section-title">Waiver and Severability</h2>
+                        <div class="section-content">
+                            <p>
+                                If any provision of this Agreement is held to be invalid or unenforceable by a court of competent jurisdiction, 
+                                the parties nevertheless agree that the court should endeavour to give effect to the parties' intentions as 
+                                reflected in the provision, and the other provisions of these terms remain in full force and effect. Acafo's 
+                                acquiescence in the breach of a provision of this Agreement or failure to act upon such breach does not waive 
+                                Acafo's right to act with respect to subsequent or similar breaches. Likewise, the delay or failure of Acafo 
+                                to exercise or enforce any right or provision of this Agreement shall not constitute a waiver of such right 
+                                or provision.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Section 24 -->
+                    <div class="terms-section">
+                        <div class="section-number">24. Governing Law & Dispute Resolution</div>
+                        <h2 class="section-title">Governing Law & Dispute Resolution</h2>
+                        <div class="section-content">
+                            <p>
+                                Specifically excluded from application to this Agreement is the law known as the United Nations Convention on 
+                                the International Sale of Goods.
+                            </p>
+                            <p>
+                                <strong>For Consumers:</strong> Except to the extent amended by any mandatory provisions of the law of the 
+                                country in which you are resident, this Agreement and the relationship between you and Acafo, and all Transactions 
+                                shall be governed by the laws of the Republic of Korea. Mandatory consumer protection or data protection laws 
+                                of your country of residence prevail to the extent they cannot be excluded by agreement.
+                            </p>
+                            <p>
+                                <strong>Dispute Resolution:</strong> Disputes shall first be resolved through good-faith negotiation; failing 
+                                that, the Seoul Central District Court shall have jurisdiction for Consumers. For non-Consumers, disputes shall 
+                                be resolved through good-faith negotiation, and if unresolved, through the Seoul Central District Court.
+                            </p>
+                            <p>
+                                <strong>Consumer Rights:</strong> Nothing in this Agreement, including the Governing Law clause, affects your 
+                                rights as a Consumer to rely on mandatory provisions of local law in your country of residence.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Section 25 -->
+                    <div class="terms-section">
+                        <div class="section-number">25. Contact Information</div>
+                        <h2 class="section-title">Contact Information</h2>
+                        <div class="section-content">
+                            <p>
+                                <strong>Acafo</strong>
+                            </p>
+                            <p>
+                                <strong>Legal & Compliance:</strong> <a href="mailto:hello@acafo.io" class="highlight">hello@acafo.io</a>
+                            </p>
+                            <p>
+                                <strong>Customer Support:</strong> <a href="mailto:hello@acafo.io" class="highlight">hello@acafo.io</a> 
+                                or via "Contact Us / Help Center" on the Platform.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Section 26 -->
+                    <div class="terms-section">
+                        <div class="section-number">26. Language Versions</div>
+                        <h2 class="section-title">Language Versions</h2>
+                        <div class="section-content">
+                            <p>
+                                These Terms are based on the English version. In case of inconsistency between language versions, 
+                                the English version prevails.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- FOOTER -->
+        <footer>
+            <div class="container">
+                <div class="footer-inner">
+                <div class="footer-disclaimer">
+                    Disclaimer: Acafo provides guidance, resources, and AI-powered support to enhance your job search. Outcomes and timelines depend on market conditions, your effort, and employer decisions; we cannot guarantee placement within a specific timeframe. AI-generated suggestions can include errors—please review and use your judgment.
+                </div>
+                    <div class="footer-column footer-copyright">
+                        <div>Acafo. 2025 All rights reserved.</div>
+                    </div>
+                    <div class="footer-column footer-links-column">
+                        <div class="footer-heading">Important links</div>
+                        <div class="footer-links">
+                            <a href="/contact" class="footer-link">Contact us</a>
+                            <a href="/terms" class="footer-link">Terms of service</a>
+                            <a href="/privacy" class="footer-link">Privacy policy</a>
+                            <a href="/refund" class="footer-link">Refund policy</a>
+                        </div>
+                    </div>
+                    <div class="footer-column footer-social-column">
+                        <div class="footer-heading">Social</div>
+                        <div class="footer-socials">
+                            <a href="https://www.linkedin.com" target="_blank" rel="noopener" class="footer-social-link">in</a>
+                            <a href="https://www.instagram.com" target="_blank" rel="noopener" class="footer-social-link">IG</a>
+                            <a href="https://www.youtube.com" target="_blank" rel="noopener" class="footer-social-link">YT</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

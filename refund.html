@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Refund Policy | Acafo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+        name="description"
+        content="Refund Policy for Acafo - AI-powered resume builder for foreigners building careers in Korea."
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/flavi_acafo.png" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    />
+
+    <style>
+        :root {
+            --bg-deep: #020617;
+            --bg-soft: #020314;
+            --blue-main: #2563eb;
+            --blue-soft: #60a5fa;
+            --blue-light: #e0f2fe;
+            --accent: #0ea5e9;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --white: #ffffff;
+            --card-bg: rgba(15, 23, 42, 0.9);
+            --border-subtle: rgba(148, 163, 184, 0.3);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at top, rgba(59, 130, 246, 0.6), transparent 50%),
+                radial-gradient(circle at bottom right, rgba(14, 165, 233, 0.5), transparent 55%),
+                #020617;
+            color: var(--white);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .page-wrapper {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 30;
+            backdrop-filter: blur(14px);
+            background: linear-gradient(to bottom, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.75), transparent);
+            border-bottom: 1px solid rgba(148, 163, 184, 0.3);
+        }
+
+        .header-container {
+            width: 100%;
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0.85rem 1.5rem;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-link {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-image {
+            height: 40px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .nav-cta {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .nav-link {
+            color: rgba(226, 232, 240, 0.9);
+            font-size: 0.9rem;
+            transition: color 0.2s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--blue-light);
+        }
+
+        .nav-lang {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            padding: 0.4rem 0.7rem;
+            border-radius: 999px;
+            border: 1px solid rgba(148, 163, 184, 0.7);
+            background: rgba(15, 23, 42, 0.85);
+            font-size: 0.78rem;
+            color: rgba(226, 232, 240, 0.9);
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        
+        .nav-lang:hover {
+            background: rgba(15, 23, 42, 0.95);
+            border-color: rgba(96, 165, 250, 0.5);
+            color: rgba(226, 232, 240, 1);
+        }
+
+        .nav-lang-icon {
+            width: 16px;
+            height: 16px;
+            border-radius: 999px;
+            border: 1px solid rgba(148, 163, 184, 0.8);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+        }
+
+        /* Main Content */
+        main {
+            flex: 1;
+            padding: 3rem 0 4rem;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .terms-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .terms-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #60a5fa, #38bdf8);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .terms-updated {
+            font-size: 0.9rem;
+            color: rgba(148, 163, 184, 0.9);
+        }
+
+        .terms-content {
+            background: rgba(15, 23, 42, 0.6);
+            border-radius: 1rem;
+            padding: 2.5rem;
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .terms-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .terms-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-number {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--blue-soft);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: rgba(226, 232, 240, 0.95);
+        }
+
+        .section-content {
+            font-size: 0.95rem;
+            color: rgba(203, 213, 225, 0.9);
+            line-height: 1.7;
+        }
+
+        .section-content p {
+            margin-bottom: 1rem;
+        }
+
+        .section-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-content ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+            list-style-type: disc;
+        }
+
+        .section-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .section-content strong {
+            color: rgba(226, 232, 240, 0.95);
+            font-weight: 600;
+        }
+
+        .highlight {
+            color: var(--blue-soft);
+        }
+
+
+        /* Footer */
+        footer {
+            padding: 1.6rem 0 2rem;
+            border-top: 1px solid rgba(30, 64, 175, 0.7);
+            margin-top: 2.4rem;
+        }
+
+        .footer-inner {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 1.5rem;
+            font-size: 0.78rem;
+            color: rgba(148, 163, 184, 0.95);
+        }
+
+        .footer-disclaimer {
+            flex: 1 1 100%;
+            font-size: 0.78rem;
+            color: rgba(148, 163, 184, 0.9);
+            line-height: 1.5;
+            margin-bottom: 0.3rem;
+        }
+
+        .footer-column {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .footer-heading {
+            font-weight: 600;
+            font-size: 0.8rem;
+            color: rgba(226, 232, 240, 0.95);
+            margin-bottom: 0.2rem;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .footer-link {
+            color: rgba(148, 163, 184, 0.95);
+            transition: color 0.2s ease;
+        }
+
+        .footer-link:hover {
+            color: var(--blue-light);
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 0.6rem;
+            margin-top: 0.4rem;
+        }
+
+        .footer-social-link {
+            width: 26px;
+            height: 26px;
+            border-radius: 999px;
+            border: 1px solid rgba(148, 163, 184, 0.5);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            color: rgba(148, 163, 184, 0.95);
+            transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+        }
+
+        .footer-social-link:hover {
+            background: rgba(37, 99, 235, 0.15);
+            border-color: rgba(59, 130, 246, 0.9);
+            color: rgba(226, 232, 240, 0.98);
+        }
+
+        /* Mobile Footer Layout */
+        @media (max-width: 768px) {
+            .footer-inner {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-items: flex-start;
+                justify-content: space-between;
+                gap: 1rem;
+            }
+
+            .footer-copyright {
+                order: 3;
+                width: 100%;
+                text-align: center;
+                margin-top: 1.5rem;
+                padding-top: 1.5rem;
+                border-top: 1px solid rgba(148, 163, 184, 0.2);
+            }
+
+            .footer-links-column {
+                order: 1;
+                flex: 0 0 auto;
+            }
+
+            .footer-social-column {
+                order: 2;
+                flex: 0 0 auto;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-disclaimer {
+                order: 0;
+                width: 100%;
+                text-align: left;
+            }
+
+            .footer-links {
+                display: flex;
+                flex-direction: column;
+                gap: 0.25rem;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .terms-title {
+                font-size: 2rem;
+            }
+
+            .terms-content {
+                padding: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.1rem;
+            }
+
+            .section-content {
+                font-size: 0.9rem;
+            }
+
+            main {
+                padding: 2rem 0 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+        <!-- HEADER -->
+        <header>
+            <div class="header-container">
+                <nav class="nav">
+                    <a href="/" class="logo-link">
+                        <img src="assets/images/Logo_acafo.png" alt="Acafo" class="logo-image" />
+                    </a>
+                    <div class="nav-cta">
+                        <a href="/" class="nav-link">Home</a>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <!-- MAIN CONTENT -->
+        <main>
+            <div class="container">
+                <div class="terms-header">
+                    <h1 class="terms-title">Refund Policy</h1>
+                    <p class="terms-updated">Last Updated: December 2025</p>
+                </div>
+
+                <div class="terms-content">
+                    <!-- Section 1 -->
+                    <div class="terms-section">
+                        <div class="section-number">1. Overview</div>
+                        <h2 class="section-title">Overview</h2>
+                        <div class="section-content">
+                            <p>
+                                Acafo uses Paddle as its authorized reseller and Merchant of Record. All payments, subscriptions, and refunds are processed by Paddle in accordance with applicable consumer protection laws.
+                            </p>
+                            <p>
+                                This Refund Policy applies to all paid subscriptions and digital services purchased through Paddle on the Acafo platform.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Section 2 -->
+                    <div class="terms-section">
+                        <div class="section-number">2. 14-Day Right of Cancellation</div>
+                        <h2 class="section-title">14-Day Right of Cancellation</h2>
+                        <div class="section-content">
+                            <p>
+                                If you are a consumer, you have the right to cancel your purchase within 14 days of the date of purchase without providing any reason.
+                            </p>
+                            <p>
+                                To exercise this right, you must notify Paddle within the 14-day cancellation period using Paddle's official support channels.
+                            </p>
+                            <p>
+                                If you cancel within this period, you will receive a full refund of all payments made, using the original payment method.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Section 3 -->
+                    <div class="terms-section">
+                        <div class="section-number">3. Digital Content & Immediate Access</div>
+                        <h2 class="section-title">Digital Content & Immediate Access</h2>
+                        <div class="section-content">
+                            <p>
+                                Some Acafo services include digital content or digital services that are made available immediately after purchase.
+                            </p>
+                            <p>
+                                Where applicable, by accessing or using the service immediately after purchase, you acknowledge that you may lose your statutory right of withdrawal once the digital service has begun, in accordance with applicable consumer protection laws.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Section 4 -->
+                    <div class="terms-section">
+                        <div class="section-number">4. Refund Processing</div>
+                        <h2 class="section-title">Refund Processing</h2>
+                        <div class="section-content">
+                            <p>
+                                All refunds are processed by Paddle.
+                            </p>
+                            <p>
+                                Approved refunds are issued without undue delay and typically completed within 14 days from the date Paddle is informed of the cancellation.
+                            </p>
+                            <p>
+                                Refunds are returned using the same payment method used for the original transaction.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Section 5 -->
+                    <div class="terms-section">
+                        <div class="section-number">5. Subscriptions</div>
+                        <h2 class="section-title">Subscriptions</h2>
+                        <div class="section-content">
+                            <p>
+                                The 14-day right of cancellation applies only to the initial subscription purchase.
+                            </p>
+                            <p>
+                                Subscriptions automatically renew unless canceled before the renewal date. Refunds are not provided for subscription renewals once the renewal payment has been processed, except where required by law.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Section 6 -->
+                    <div class="terms-section">
+                        <div class="section-number">6. How to Request a Refund</div>
+                        <h2 class="section-title">How to Request a Refund</h2>
+                        <div class="section-content">
+                            <p>
+                                To request a refund, please contact Paddle directly through their support page:
+                            </p>
+                            <p>
+                                <a href="https://paddle.com/help" target="_blank" rel="noopener" class="highlight">https://paddle.com/help</a>
+                            </p>
+                            <p>
+                                You may be asked to provide:
+                            </p>
+                            <ul>
+                                <li>Your order number</li>
+                                <li>The email address used at checkout</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Section 7 -->
+                    <div class="terms-section">
+                        <div class="section-number">7. Governing Authority</div>
+                        <h2 class="section-title">Governing Authority</h2>
+                        <div class="section-content">
+                            <p>
+                                All refunds are issued by Paddle in accordance with applicable consumer protection laws.
+                            </p>
+                            <p>
+                                This Refund Policy does not affect any statutory rights you may have as a consumer under local law.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- FOOTER -->
+        <footer>
+            <div class="container">
+                <div class="footer-inner">
+                <div class="footer-disclaimer">
+                    Disclaimer: Acafo provides guidance, resources, and AI-powered support to enhance your job search. Outcomes and timelines depend on market conditions, your effort, and employer decisions; we cannot guarantee placement within a specific timeframe. AI-generated suggestions can include errors—please review and use your judgment.
+                </div>
+                    <div class="footer-column footer-copyright">
+                        <div>Acafo. 2025 All rights reserved.</div>
+                    </div>
+                    <div class="footer-column footer-links-column">
+                        <div class="footer-heading">Important links</div>
+                        <div class="footer-links">
+                            <a href="/contact" class="footer-link">Contact us</a>
+                            <a href="/terms" class="footer-link">Terms of service</a>
+                            <a href="/privacy" class="footer-link">Privacy policy</a>
+                            <a href="/refund" class="footer-link">Refund policy</a>
+                        </div>
+                    </div>
+                    <div class="footer-column footer-social-column">
+                        <div class="footer-heading">Social</div>
+                        <div class="footer-socials">
+                            <a href="https://www.linkedin.com" target="_blank" rel="noopener" class="footer-social-link">in</a>
+                            <a href="https://www.instagram.com" target="_blank" rel="noopener" class="footer-social-link">IG</a>
+                            <a href="https://www.youtube.com" target="_blank" rel="noopener" class="footer-social-link">YT</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
+

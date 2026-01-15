@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Terms of Service | Acafo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+        name="description"
+        content="Terms of Service for Acafo - AI-powered resume builder for foreigners building careers in Korea."
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/flavi_acafo.png" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    />
+
+    <style>
+        :root {
+            --bg-deep: #020617;
+            --bg-soft: #020314;
+            --blue-main: #2563eb;
+            --blue-soft: #60a5fa;
+            --blue-light: #e0f2fe;
+            --accent: #0ea5e9;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --white: #ffffff;
+            --card-bg: rgba(15, 23, 42, 0.9);
+            --border-subtle: rgba(148, 163, 184, 0.3);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at top, rgba(59, 130, 246, 0.6), transparent 50%),
+                radial-gradient(circle at bottom right, rgba(14, 165, 233, 0.5), transparent 55%),
+                #020617;
+            color: var(--white);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .page-wrapper {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 30;
+            backdrop-filter: blur(14px);
+            background: linear-gradient(to bottom, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.75), transparent);
+            border-bottom: 1px solid rgba(148, 163, 184, 0.3);
+        }
+
+        .header-container {
+            width: 100%;
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0.85rem 1.5rem;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-link {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-image {
+            height: 40px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .nav-cta {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .nav-link {
+            color: rgba(226, 232, 240, 0.9);
+            font-size: 0.9rem;
+            transition: color 0.2s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--blue-light);
+        }
+
+        .nav-lang {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            padding: 0.4rem 0.7rem;
+            border-radius: 999px;
+            border: 1px solid rgba(148, 163, 184, 0.7);
+            background: rgba(15, 23, 42, 0.85);
+            font-size: 0.78rem;
+            color: rgba(226, 232, 240, 0.9);
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        
+        .nav-lang:hover {
+            background: rgba(15, 23, 42, 0.95);
+            border-color: rgba(96, 165, 250, 0.5);
+            color: rgba(226, 232, 240, 1);
+        }
+
+        .nav-lang-icon {
+            width: 16px;
+            height: 16px;
+            border-radius: 999px;
+            border: 1px solid rgba(148, 163, 184, 0.8);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+        }
+
+        /* Main Content */
+        main {
+            flex: 1;
+            padding: 3rem 0 4rem;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .terms-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .terms-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #60a5fa, #38bdf8);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .terms-updated {
+            font-size: 0.9rem;
+            color: rgba(148, 163, 184, 0.9);
+        }
+
+        .terms-content {
+            background: rgba(15, 23, 42, 0.6);
+            border-radius: 1rem;
+            padding: 2.5rem;
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .terms-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .terms-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-number {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--blue-soft);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: rgba(226, 232, 240, 0.95);
+        }
+
+        .section-content {
+            font-size: 0.95rem;
+            color: rgba(203, 213, 225, 0.9);
+            line-height: 1.7;
+        }
+
+        .section-content p {
+            margin-bottom: 1rem;
+        }
+
+        .section-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-content ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+            list-style-type: disc;
+        }
+
+        .section-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .section-content strong {
+            color: rgba(226, 232, 240, 0.95);
+            font-weight: 600;
+        }
+
+        .highlight {
+            color: var(--blue-soft);
+        }
+
+        /* Footer */
+        footer {
+            padding: 1.6rem 0 2rem;
+            border-top: 1px solid rgba(30, 64, 175, 0.7);
+            margin-top: 2.4rem;
+        }
+
+        .footer-inner {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 1.5rem;
+            font-size: 0.78rem;
+            color: rgba(148, 163, 184, 0.95);
+        }
+
+        .footer-disclaimer {
+            flex: 1 1 100%;
+            font-size: 0.78rem;
+            color: rgba(148, 163, 184, 0.9);
+            line-height: 1.5;
+            margin-bottom: 0.3rem;
+        }
+
+        .footer-column {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .footer-heading {
+            font-weight: 600;
+            font-size: 0.8rem;
+            color: rgba(226, 232, 240, 0.95);
+            margin-bottom: 0.2rem;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .footer-link {
+            color: rgba(148, 163, 184, 0.95);
+            transition: color 0.2s ease;
+        }
+
+        .footer-link:hover {
+            color: var(--blue-light);
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 0.6rem;
+            margin-top: 0.4rem;
+        }
+
+        .footer-social-link {
+            width: 26px;
+            height: 26px;
+            border-radius: 999px;
+            border: 1px solid rgba(148, 163, 184, 0.5);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            color: rgba(148, 163, 184, 0.95);
+            transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+        }
+
+        .footer-social-link:hover {
+            background: rgba(37, 99, 235, 0.15);
+            border-color: rgba(59, 130, 246, 0.9);
+            color: rgba(226, 232, 240, 0.98);
+        }
+
+        /* Mobile Footer Layout */
+        @media (max-width: 768px) {
+            .footer-inner {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-items: flex-start;
+                justify-content: space-between;
+                gap: 1rem;
+            }
+
+            .footer-copyright {
+                order: 3;
+                width: 100%;
+                text-align: center;
+                margin-top: 1.5rem;
+                padding-top: 1.5rem;
+                border-top: 1px solid rgba(148, 163, 184, 0.2);
+            }
+
+            .footer-links-column {
+                order: 1;
+                flex: 0 0 auto;
+            }
+
+            .footer-social-column {
+                order: 2;
+                flex: 0 0 auto;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-disclaimer {
+                order: 0;
+                width: 100%;
+                text-align: left;
+            }
+
+            .footer-links {
+                display: flex;
+                flex-direction: column;
+                gap: 0.25rem;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .terms-title {
+                font-size: 2rem;
+            }
+
+            .terms-content {
+                padding: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.1rem;
+            }
+
+            .section-content {
+                font-size: 0.9rem;
+            }
+
+            main {
+                padding: 2rem 0 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+        <!-- HEADER -->
+        <header>
+            <div class="header-container">
+                <nav class="nav">
+                    <a href="/" class="logo-link">
+                        <img src="assets/images/Logo_acafo.png" alt="Acafo" class="logo-image" />
+                    </a>
+                    <div class="nav-cta">
+                        <a href="/ko/terms" class="nav-lang" aria-label="Change language">
+                            <span class="nav-lang-icon">🌐</span>
+                            <span>EN / KR</span>
+                        </a>
+                        <a href="/" class="nav-link">Home</a>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <!-- MAIN CONTENT -->
+        <main>
+            <div class="container">
+                <div class="terms-header">
+                    <h1 class="terms-title">Terms of Service</h1>
+                    <p class="terms-updated">Last Updated: December 2025</p>
+                </div>
+
+                <div class="terms-content">
+                    <div class="section-content" style="margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(148, 163, 184, 0.2);">
+                        <p>
+                            Welcome to Acafo (hereinafter referred to as the "Platform," "we," or "us"). To protect your rights, 
+                            please read and agree to these Terms of Service ("Terms") before using any of the services provided 
+                            by the Platform. These Terms are written in clear and legally binding language. By registering, logging 
+                            in, or using any of the Platform's services, you acknowledge that you have read, understood, and 
+                            agreed to be bound by these Terms.
+                        </p>
+                    </div>
+
+                    <!-- Section 1 -->
+                    <div class="terms-section">
+                        <div class="section-number">1. Definitions</div>
+                        <h2 class="section-title">Definitions</h2>
+                        <div class="section-content">
+                            <p>
+                                For clarity, the following definitions apply (including but not limited to):
+                            </p>
+                            <p>
+                                <strong>Company / Acafo:</strong> The provider and operator of the Platform.
+                            </p>
+                            <p>
+                                <strong>User / You:</strong> Any individual or entity using the Platform, including individual 
+                                users (job seekers) and enterprise users (employers, headhunters, agencies, contractors, etc.).
+                            </p>
+                            <p>
+                                <strong>Services:</strong> Online and offline services provided by the Platform, including but 
+                                not limited to: resume building, portfolios, AI resume review and audit, resume translation to 
+                                Korean, job search and matching, job postings, talent search, AI coaching and career guidance, 
+                                skill discovery, mobile applications (App), APIs and third-party integrations, as well as offline 
+                                services.
+                            </p>
+                            <p>
+                                <strong>User Content:</strong> Any information or material uploaded, submitted, or generated through 
+                                the Platform, including but not limited to personal profiles, resumes, portfolios, posts, messages, 
+                                company information, job descriptions, reviews, and feedback.
+                            </p>
+                            <p>
+                                <strong>Personal Data:</strong> Personally identifiable information as defined by applicable laws.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Section 2 -->
+                    <div class="terms-section">
+                        <div class="section-number">2. Applicability of Terms & Additional Documents</div>
+                        <h2 class="section-title">Applicability of Terms & Additional Documents</h2>
+                        <div class="section-content">
+                            <p>
+                                These Terms apply to all users and all services. Certain services or plans may have additional 
+                                terms or agreements (e.g., Service Level Agreements (SLA), Privacy Policy, Cookie Policy, Community 
+                                Guidelines; collectively, "Additional Documents"). Additional Documents form part of these Terms. 
+                                In case of conflict, the Additional Document prevails.
+                            </p>
+                            <p>
+                                If you agree to these Terms on behalf of a company or organization, you represent that you are 
+                                duly authorized, and these Terms are binding upon that entity.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Section 3 -->
+                    <div class="terms-section">
+                        <div class="section-number">3. Accounts, Identity & Security</div>
+                        <h2 class="section-title">Accounts, Identity & Security</h2>
+                        <div class="section-content">
+                            <p>
+                                <strong>Eligibility and Authenticity:</strong> You must provide true, accurate, and up-to-date 
+                                information. Identity impersonation or falsification is prohibited. Minors require consent from 
+                                a legal guardian.
+                            </p>
+                            <p>
+                                <strong>Account Use:</strong> Personal accounts are for individual use only. Enterprise accounts 
+                                may only be used by authorized personnel within the company, within the scope of their authorization. 
+                                Accounts may not be rented, transferred, or shared with third parties.
+                            </p>
+                            <p>
+                                <strong>Security:</strong> You are responsible for safeguarding your account credentials and 
+                                activities conducted through your account. Notify us immediately of unauthorized use.
+                            </p>
+                            <p>
+                                <strong>Review Rights:</strong> To maintain security and service quality, we reserve the right 
+                                to review, restrict, or refuse suspicious applications (see Article 7).
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Section 4 -->
+                    <div class="terms-section">
+                        <div class="section-number">4. Services & Flexibility</div>
+                        <h2 class="section-title">Services & Flexibility</h2>
+                        <div class="section-content">
+                            <p>
+                                Services include those listed in Article 1, as well as future additions or adjustments. Actual 
+                                scope and availability are as described on the Platform's pages, plan details, or announcements.
+                            </p>
+                            <p>
+                                We may add, modify, suspend, or terminate some or all services due to operational or legal needs. 
+                                For paid plans, if a service is permanently terminated, compensation or refund principles will be 
+                                announced (see Article 12).
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Section 5 -->
+                    <div class="terms-section">
+                        <div class="section-number">5. User Content: Rights, Licenses & Visibility</div>
+                        <h2 class="section-title">User Content: Rights, Licenses & Visibility</h2>
+                        <div class="section-content">
+                            <p>
+                                <strong>Ownership:</strong> Intellectual property rights in User Content remain with you or the 
+                                original rights holder. The Platform does not claim ownership but requires a license to use such 
+                                content as necessary for services. Derivative works or annotations generated by the Platform (e.g., 
+                                classification, normalization, embeddings, indexing, recommendation signals, database compilation) 
+                                remain the property of the Platform or legitimate rights holders.
+                            </p>
+                            <p>
+                                <strong>License to Platform (Purpose-Limited):</strong> To provide, operate, improve, and secure 
+                                services, and for matching, support, security, statistics, and product analysis (aggregated or 
+                                de-identified when feasible), you grant the Platform a global, non-exclusive, royalty-free, 
+                                sublicensable, and transferable license limited to reproducing, formatting, storing, backing up, 
+                                transmitting, displaying, and distributing your User Content. We will not use your content beyond 
+                                these purposes.
+                            </p>
+                            <p>
+                                <strong>Visibility & Permissions:</strong> You may set the visibility of resumes, portfolios, and 
+                                profiles. The Platform will provide access based on your settings. Features such as share links, 
+                                resume downloads/exports, APIs, or third-party integrations will function within the scope of your 
+                                settings.
+                            </p>
+                            <p>
+                                <strong>Third-Party Sharing Restrictions:</strong> Data accessed via the Platform (e.g., resumes, 
+                                contact details, application history) may only be used for the agreed purpose within the authorized 
+                                entity. Resale, sublicensing, publishing, or sharing with third parties is prohibited unless explicitly 
+                                permitted.
+                            </p>
+                            <p>
+                                <strong>Removal & Retention:</strong> You may edit or remove User Content. Backup copies may be 
+                                retained for auditing, dispute resolution, or legal compliance but will not be publicly available. 
+                                Content already shared may persist with third parties.
+                            </p>
+                            <p>
+                                <strong>User Warranties:</strong> You warrant legal authority to submit User Content, that it does 
+                                not infringe rights or laws, and that personal data complies with applicable laws.
+                            </p>
+                            <p>
+                                <strong>Platform Database Rights:</strong> Rights in derivative annotations, embeddings, AI-generated 
+                                outputs, and compilations remain with the Platform or legitimate holders. Unauthorized reproduction, 
+                                distribution, resale, or database creation is prohibited.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Section 6 -->
+                    <div class="terms-section">
+                        <div class="section-number">6. Personal Data & Privacy</div>
+                        <h2 class="section-title">Personal Data & Privacy</h2>
+                        <div class="section-content">
+                            <p>
+                                <strong>Purpose of Collection:</strong> We collect and process personal data for providing/improving 
+                                services, matching, recruitment, security, support, and legal compliance. See our Privacy Policy.
+                            </p>
+                            <p>
+                                <strong>Cross-Border & Outsourcing:</strong> Personal data may be stored/processed outside your 
+                                region in compliance with laws, under appropriate safeguards.
+                            </p>
+                            <p>
+                                <strong>Data Subject Rights:</strong> You may exercise rights under the Privacy Policy and applicable 
+                                laws.
+                            </p>
+                            <p>
+                                <strong>User Consent:</strong> By registering, you agree that your profile/resume visibility settings 
+                                may allow enterprise users to access your data, subject to paid plans and lawful recruitment purposes.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Section 7 -->
+                    <div class="terms-section">
+                        <div class="section-number">7. Data Protection, Non-Competition & Anti-Scraping</div>
+                        <h2 class="section-title">Data Protection, Non-Competition & Anti-Scraping</h2>
+                        <div class="section-content">
+                            <p>
+                                You agree to the following:
+                            </p>
+                            <p>
+                                <strong>Usage Restrictions:</strong> Data (resumes, jobs, company info, reports) may only be used 
+                                per these Terms and plan scope. Candidate personal data may not be used for unrelated purposes such 
+                                as marketing.
+                            </p>
+                            <p>
+                                <strong>No Unauthorized Sharing/Resale:</strong> Unauthorized sharing, resale, sublicensing, 
+                                database creation, or integration into competing services is prohibited.
+                            </p>
+                            <p>
+                                <strong>Non-Competition Restrictions:</strong> Competing recruitment, ATS, HR tech, or data services 
+                                may not register or access without written consent.
+                            </p>
+                            <p>
+                                <strong>No Automated Access:</strong> Use of crawlers, bots, scrapers, or automated tools without 
+                                consent is prohibited. Abnormal usage may lead to restriction.
+                            </p>
+                            <p>
+                                <strong>No AI Training:</strong> Platform data may not be used to train, fine-tune, or evaluate 
+                                models without written consent.
+                            </p>
+                            <p>
+                                <strong>Quota & Rate Limits:</strong> The Platform may impose query, view, download, and API limits.
+                            </p>
+                            <p>
+                                <strong>No Redistribution to Competitors:</strong> Redistributing Platform data to competing systems 
+                                or training services is prohibited.
+                            </p>
+                            <p>
+                                <strong>Compliance Obligations:</strong> Users are responsible for compliance with applicable laws 
+                                (e.g., GDPR, CCPA, PIPL, Taiwan PDPA).
+                            </p>
+                            <p>
+                                <strong>Audits & Sanctions:</strong> We may audit suspected misuse and restrict or terminate accounts, 
+                                reserving legal rights.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Section 8 -->
+                    <div class="terms-section">
+                        <div class="section-number">8. Service Interruptions & Maintenance</div>
+                        <h2 class="section-title">Service Interruptions & Maintenance</h2>
+                        <div class="section-content">
+                            <p>
+                                <strong>Scheduled Maintenance:</strong> We may perform upgrades/maintenance with advance notice.
+                            </p>
+                            <p>
+                                <strong>Emergency Maintenance:</strong> In urgent cases, services may be suspended without notice.
+                            </p>
+                            <p>
+                                <strong>Force Majeure:</strong> We are not liable for interruptions due to uncontrollable events 
+                                (e.g., disasters, wars, outages).
+                            </p>
+                            <p>
+                                <strong>SLA:</strong> Service Level Agreements in paid plans prevail.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Section 9 -->
+                    <div class="terms-section">
+                        <div class="section-number">9. Content Removal & Notice Mechanisms</div>
+                        <h2 class="section-title">Content Removal & Notice Mechanisms</h2>
+                        <div class="section-content">
+                            <p>
+                                <strong>Notice & Takedown:</strong> Rights holders may submit written notices of infringement.
+                            </p>
+                            <p>
+                                <strong>Process:</strong> Upon valid notice, content may be removed or restricted.
+                            </p>
+                            <p>
+                                <strong>Counter-Notice:</strong> Providers may contest removal.
+                            </p>
+                            <p>
+                                <strong>Repeat Violations:</strong> Repeated infringements may lead to suspension or termination.
+                            </p>
+                            <p>
+                                <strong>Abuse Liability:</strong> False or malicious notices incur liability.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Section 10 -->
+                    <div class="terms-section">
+                        <div class="section-number">10. Warranties & Liability Limitations</div>
+                        <h2 class="section-title">Warranties & Liability Limitations</h2>
+                        <div class="section-content">
+                            <p>
+                                <strong>As-Is Basis:</strong> Services are provided "as is" without warranties.
+                            </p>
+                            <p>
+                                <strong>No Indirect Liability:</strong> We are not liable for indirect damages.
+                            </p>
+                            <p>
+                                <strong>Liability Cap:</strong> Liability is capped at amounts paid in the prior 12 months.
+                            </p>
+                            <p>
+                                <strong>Third-Party Services:</strong> We are not responsible for third-party services.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Section 11 -->
+                    <div class="terms-section">
+                        <div class="section-number">11. Changes & Notifications</div>
+                        <h2 class="section-title">Changes & Notifications</h2>
+                        <div class="section-content">
+                            <p>
+                                We may amend these Terms or Additional Documents as needed. Updates will be announced or notified.
+                            </p>
+                            <p>
+                                Major changes affecting paid services will be notified at least 7 days in advance. Continued use 
+                                indicates agreement.
+                            </p>
+                            <p>
+                                <strong>Price/Plan Changes:</strong> At least 7 days' notice will be given. New prices apply to 
+                                renewals or new purchases.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Section 12 -->
+                    <div class="terms-section">
+                        <div class="section-number">12. Fees, Subscriptions & Refunds</div>
+                        <h2 class="section-title">Fees, Subscriptions & Refunds</h2>
+                        <div class="section-content">
+                            <p>
+                                <strong>Billing & Taxes:</strong> The pricing, billing cycle, features, and usage limits of each 
+                                plan or product are subject to the most recent information provided on the plan or subscription page. 
+                                Taxes (if applicable) and payment processing fees shall be handled in accordance with the details 
+                                displayed on the checkout page or the payment service provider's terms.
+                            </p>
+                            <p>
+                                Upon successful payment, a receipt will be sent to the registered email address. Users may download 
+                                an electronic receipt through the payment system (e.g., Stripe; actual providers may vary by region 
+                                or plan) as indicated on the checkout page or related notification, or contact customer support 
+                                at <a href="mailto:hello@acafo.io" class="highlight">hello@acafo.io</a> for further assistance.
+                            </p>
+                            <p>
+                                <strong>Auto-Renewal & Cancellation:</strong> Subscriptions auto-renew. You may cancel anytime, 
+                                effectively the end of the current billing cycle.
+                            </p>
+                            <p>
+                                <strong>Trial Periods:</strong> Unless canceled, trials convert to paid subscriptions.
+                            </p>
+                            <p>
+                                <strong>Upgrades/Downgrades:</strong> Upgrades apply immediately; downgrades apply next cycle. Fees 
+                                already paid are non-refundable.
+                            </p>
+                            <p>
+                                <strong>Refund Policy:</strong>
+                            </p>
+                            <ul>
+                                <li>First-time subscribers may request refunds within 7 days of payment.</li>
+                                <li>"n-day satisfaction guarantee" refunds apply only to first subscriptions.</li>
+                                <li>Payment processor fees are non-refundable.</li>
+                                <li>Purchases via third-party stores follow their refund policies.</li>
+                                <li>Abuse of refunds may result in denial or termination.</li>
+                            </ul>
+                            <p>
+                                <strong>Price/Plan Adjustments:</strong> Notice at least 30 days in advance. New prices apply at renewal.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Section 13 -->
+                    <div class="terms-section">
+                        <div class="section-number">13. Governing Law & Dispute Resolution</div>
+                        <h2 class="section-title">Governing Law & Dispute Resolution</h2>
+                        <div class="section-content">
+                            <p>
+                                These Terms are governed by the laws of the Republic of Korea.
+                            </p>
+                            <p>
+                                Disputes shall first be resolved through good-faith negotiation; failing that, the Seoul Central 
+                                District Court shall have jurisdiction.
+                            </p>
+                            <p>
+                                Mandatory consumer protection or data protection laws prevail. Cooling-off rights under distance 
+                                sales laws may not apply to immediate digital services where you consent to early use.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Section 14 -->
+                    <div class="terms-section">
+                        <div class="section-number">14. Contact Information</div>
+                        <h2 class="section-title">Contact Information</h2>
+                        <div class="section-content">
+                            <p>
+                                <strong>Acafo</strong>
+                            </p>
+                            <p>
+                                <strong>Legal & Compliance:</strong> <a href="mailto:hello@acafo.io" class="highlight">hello@acafo.io</a>
+                            </p>
+                            <p>
+                                <strong>Customer Support:</strong> <a href="mailto:hello@acafo.io" class="highlight">hello@acafo.io</a> 
+                                or via "Contact Us / Help Center" on the Platform.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Section 15 -->
+                    <div class="terms-section">
+                        <div class="section-number">15. Language Versions</div>
+                        <h2 class="section-title">Language Versions</h2>
+                        <div class="section-content">
+                            <p>
+                                These Terms are based on the English version. In case of inconsistency between language versions, 
+                                the English version prevails.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- FOOTER -->
+        <footer>
+            <div class="container">
+                <div class="footer-inner">
+                <div class="footer-disclaimer">
+                    Disclaimer: Acafo provides guidance, resources, and AI-powered support to enhance your job search. Outcomes and timelines depend on market conditions, your effort, and employer decisions; we cannot guarantee placement within a specific timeframe. AI-generated suggestions can include errors—please review and use your judgment.
+                </div>
+                    <div class="footer-column footer-copyright">
+                        <div>Acafo. 2025 All rights reserved.</div>
+                    </div>
+                    <div class="footer-column footer-links-column">
+                        <div class="footer-heading">Important links</div>
+                        <div class="footer-links">
+                            <a href="/contact" class="footer-link">Contact us</a>
+                            <a href="/terms" class="footer-link">Terms of service</a>
+                            <a href="/privacy" class="footer-link">Privacy policy</a>
+                            <a href="/refund" class="footer-link">Refund policy</a>
+                        </div>
+                    </div>
+                    <div class="footer-column footer-social-column">
+                        <div class="footer-heading">Social</div>
+                        <div class="footer-socials">
+                            <a href="https://www.linkedin.com" target="_blank" rel="noopener" class="footer-social-link">in</a>
+                            <a href="https://www.instagram.com" target="_blank" rel="noopener" class="footer-social-link">IG</a>
+                            <a href="https://www.youtube.com" target="_blank" rel="noopener" class="footer-social-link">YT</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
+
