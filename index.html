@@ -49,8 +49,9 @@
             font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
             min-height: 100vh;
             background:
-                radial-gradient(circle at top, rgba(59, 130, 246, 0.6), transparent 50%),
-                radial-gradient(circle at bottom right, rgba(14, 165, 233, 0.5), transparent 55%),
+                radial-gradient(circle at top, rgba(15, 23, 42, 0.9) 0%, transparent 60%),
+                radial-gradient(circle at top, rgba(30, 58, 138, 0.4) 0%, transparent 50%),
+                radial-gradient(circle at bottom right, rgba(14, 165, 233, 0.4), transparent 55%),
                 #020617;
             color: var(--white);
             line-height: 1.6;
@@ -80,7 +81,7 @@
             top: 0;
             z-index: 30;
             backdrop-filter: blur(14px);
-            background: linear-gradient(to bottom, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.75), transparent);
+            background: linear-gradient(to bottom, #020617 0%, rgba(15, 23, 42, 0.9) 60%, transparent);
             border-bottom: 1px solid rgba(148, 163, 184, 0.3);
         }
 
@@ -328,20 +329,52 @@
         }
 
         /* Hero */
+        /* Hero Overhaul */
         .hero {
-            padding: 6rem 0 4.5rem;
+            padding: 10rem 0 8rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Animated Mesh Background for Hero */
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 10% 20%, rgba(37, 99, 235, 0.12) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(255, 46, 140, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(14, 165, 233, 0.05) 0%, transparent 60%);
+            animation: hero-mesh-flow 20s ease-in-out infinite alternate;
+            z-index: 0;
+        }
+
+        @keyframes hero-mesh-flow {
+            0% {
+                transform: scale(1) translate(0, 0);
+            }
+
+            100% {
+                transform: scale(1.1) translate(2%, 2%);
+            }
         }
 
         .hero .container {
             width: 85%;
-            max-width: none;
+            max-width: 1400px;
+            position: relative;
+            z-index: 10;
         }
 
         .hero-inner {
             display: grid;
-            grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
-            gap: 3rem;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 5rem;
             align-items: center;
+        }
+
+        .hero-main {
+            text-align: left;
         }
 
         .hero-kicker {
@@ -350,7 +383,7 @@
             gap: 0.4rem;
             padding: 0.18rem 0.7rem;
             border-radius: 999px;
-            border: 1px solid rgba(148, 163, 184, 0.6);
+            border: 1px solid rgba(148, 115, 184, 0.6);
             background: rgba(15, 23, 42, 0.9);
             font-size: 0.75rem;
             color: var(--blue-light);
@@ -366,105 +399,241 @@
         }
 
         .hero-title {
-            font-size: clamp(2.15rem, 4vw, 3rem);
-            line-height: 1.4;
-            font-weight: 700;
+            font-size: clamp(2.8rem, 6vw, 4.2rem);
+            line-height: 1.05;
+            font-weight: 850;
             margin-bottom: 2rem;
-            letter-spacing: -0.01em;
+            letter-spacing: -0.04em;
+            color: white;
         }
 
         .hero-title span {
-            background: linear-gradient(135deg, #a5f3fc, #67e8f9, #22d3ee, #06b6d4, #0ea5e9);
+            display: block;
+            margin-top: 0.5rem;
+            background: linear-gradient(135deg, #60a5fa, #2dd4bf, #a855f7);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
-            display: block;
-            margin-top: 0.4rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            position: relative;
-            padding: 0.4rem 0.8rem;
-            border-radius: 0.5rem;
-            line-height: 1.5;
-        }
-
-        .hero-title span::before {
-            content: "";
-            position: absolute;
-            inset: 4px 2px 4px 6px;
-            background: linear-gradient(135deg, rgba(96, 165, 250, 0.25), rgba(14, 165, 233, 0.3), rgba(6, 182, 212, 0.25));
-            border-radius: 0.5rem;
-            filter: blur(8px);
-            z-index: -1;
-            opacity: 0.8;
-        }
-
-        .hero-title span::after {
-            content: "";
-            position: absolute;
-            inset: 6px 2px 6px 8px;
-            background: linear-gradient(135deg, rgba(96, 165, 250, 0.4), rgba(14, 165, 233, 0.5));
-            border-radius: 0.5rem;
-            z-index: -2;
-            opacity: 0.6;
-            filter: blur(6px);
+            font-size: 0.8em;
         }
 
         .hero-subtitle {
-            font-size: 0.98rem;
-            max-width: 34rem;
-            color: rgba(203, 213, 225, 0.9);
-            margin-bottom: 2.5rem;
-            line-height: 1.8;
+            font-size: 1.15rem;
+            color: #94a3b8;
+            line-height: 1.7;
+            margin-bottom: 3rem;
+            max-width: 540px;
         }
 
-        .hero-badges {
+        /* Floating UI Visuals */
+        .hero-visual {
+            position: relative;
+            height: 540px;
             display: flex;
-            flex-wrap: wrap;
-            gap: 0.6rem;
-            margin-bottom: 1.8rem;
+            align-items: center;
+            justify-content: center;
         }
 
-        .hero-badge {
+        .glass-card {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 2rem;
+            padding: 1.75rem;
+            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.6);
+            animation: float 8s ease-in-out infinite;
+            z-index: 2;
+        }
+
+        .card-skill {
+            top: 5%;
+            left: -5%;
+            width: 260px;
+            border-left: 5px solid #3b82f6;
+            animation-delay: 0s;
+        }
+
+        .card-ats {
+            top: 35%;
+            right: -5%;
+            width: 240px;
+            border-top: 5px solid #ff2e8c;
+            animation-delay: -3s;
+        }
+
+        .card-status {
+            bottom: 5%;
+            left: 20%;
+            width: 220px;
+            border-bottom: 5px solid #22c55e;
+            animation-delay: -6s;
+        }
+
+        .glass-card h4 {
             font-size: 0.75rem;
-            padding: 0.28rem 0.7rem;
-            border-radius: 999px;
-            border: 1px solid rgba(148, 163, 184, 0.55);
-            background: rgba(15, 23, 42, 0.85);
-            color: rgba(226, 232, 240, 0.95);
+            color: #64748b;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 700;
         }
 
-        .hero-badges-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-            margin-bottom: 1.8rem;
-            margin-top: 1.5rem;
+        .glass-card .value {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: white;
+            line-height: 1.2;
+        }
+
+        .glass-card .tag {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.35rem 0.8rem;
+            border-radius: 99px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        .tag-blue {
+            background: rgba(59, 130, 246, 0.15);
+            color: #60a5fa;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+
+        .tag-pink {
+            background: rgba(255, 46, 140, 0.15);
+            color: #ff2e8c;
+            border: 1px solid rgba(255, 46, 140, 0.3);
+        }
+
+        .tag-green {
+            background: rgba(34, 197, 94, 0.15);
+            color: #4ade80;
+            border: 1px solid rgba(34, 197, 94, 0.3);
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0);
+            }
+
+            50% {
+                transform: translateY(-30px) rotate(1deg);
+            }
+        }
+
+        @media (max-width: 1100px) {
+            .hero-inner {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 6rem;
+            }
+
+            .hero-main {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-subtitle {
+                max-width: 600px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-visual {
+                height: 450px;
+                width: 100%;
+                max-width: 500px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 6rem 0 4rem;
+            }
+
+            .hero-title {
+                font-size: clamp(2.2rem, 8vw, 2.8rem);
+            }
+
+            .hero-visual {
+                height: 380px;
+            }
+
+            .glass-card {
+                padding: 1.25rem;
+                border-radius: 1.5rem;
+            }
+
+            .glass-card .value {
+                font-size: 1.25rem;
+            }
+
+            .card-skill {
+                width: 210px;
+                top: 0;
+                left: 0;
+            }
+
+            .card-ats {
+                width: 190px;
+                top: 35%;
+                right: 0;
+            }
+
+            .card-status {
+                width: 180px;
+                bottom: 0;
+                left: 10%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-visual {
+                height: 320px;
+            }
+
+            .glass-card {
+                padding: 1rem;
+            }
+
+            .glass-card .value {
+                font-size: 1.1rem;
+            }
+
+            .card-skill {
+                width: 180px;
+            }
+
+            .card-ats {
+                width: 160px;
+            }
+
+            .card-status {
+                width: 150px;
+            }
         }
 
         .hero-badge-grid {
-            font-size: 0.85rem;
-            padding: 0.9rem 1.1rem;
-            border-radius: 0.75rem;
             border: 1px solid rgba(96, 165, 250, 0.3);
             background: linear-gradient(135deg, rgba(37, 99, 235, 0.15), rgba(14, 165, 233, 0.1));
             color: rgba(226, 232, 240, 0.98);
+            padding: 0.9rem 1.1rem;
+            border-radius: 0.75rem;
             text-align: left;
             font-weight: 500;
-            transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+            transition: all 0.2s ease;
             backdrop-filter: blur(8px);
             display: flex;
             align-items: center;
             gap: 0.75rem;
-        }
-
-        .hero-badge-grid {
-            counter-increment: badge-counter;
-        }
-
-        .hero-badges-grid {
-            counter-reset: badge-counter;
         }
 
         .hero-badge-grid::before {
@@ -491,11 +660,34 @@
         }
 
         .hero-cta-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.9rem;
-            margin-bottom: 2rem;
-            margin-top: 1rem;
+            display: flex !important;
+            justify-content: flex-start !important;
+            margin-bottom: 2rem !important;
+            margin-top: 1rem !important;
+            width: 100% !important;
+        }
+
+        .hero-cta-row .process-cta-button {
+            width: 50% !important;
+            max-width: none !important;
+            padding: 1rem 2rem !important;
+            font-size: 1rem !important;
+            text-align: center !important;
+            display: block !important;
+            margin-left: 0 !important;
+            margin-right: auto !important;
+        }
+
+        @media (max-width: 1100px) {
+            .hero-cta-row {
+                justify-content: center !important;
+            }
+
+            .hero-cta-row .process-cta-button {
+                width: 95% !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
         }
 
         .hero-note {
@@ -795,6 +987,7 @@
 
         .video-cta {
             margin-top: 2rem;
+            text-align: center;
         }
 
         .skill-discovery-card {
@@ -922,49 +1115,71 @@
         }
 
         .skill-discovery-snippet {
-            border-radius: 1rem;
-            border: 1px solid rgba(148, 163, 184, 0.2);
-            border-left: 3px solid rgba(59, 130, 246, 0.3);
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(240, 249, 255, 0.9));
-            padding: 1.3rem;
-            margin-bottom: 1.1rem;
-            font-size: 0.9rem;
-            transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, border-left-color 0.2s ease;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+            border-radius: 1.25rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
             position: relative;
             z-index: 2;
-        }
-
-        .skill-discovery-snippet::before {
-            content: "";
-            position: absolute;
-            top: 1.3rem;
-            left: 0.5rem;
-            width: 2px;
-            height: calc(100% - 2.6rem);
-            background: linear-gradient(180deg, rgba(59, 130, 246, 0.2), transparent);
-            border-radius: 2px;
-        }
-
-        .skill-discovery-snippet:hover {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(240, 249, 255, 0.95));
-            border-color: rgba(96, 165, 250, 0.3);
-            border-left-color: rgba(59, 130, 246, 0.5);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 1);
+            transition: all 0.3s ease;
         }
 
         .skill-discovery-snippet-label {
-            font-size: 0.75rem;
-            color: #475569;
-            margin-bottom: 0.4rem;
-            font-weight: 600;
+            font-size: 0.7rem;
+            font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
         }
 
-        .skill-discovery-snippet p {
-            color: #1e293b;
+        /* User "Input" Style - Raw & Draft-like */
+        .snippet-user {
+            background: #fcfcfc !important;
+            border: 1px dashed #cbd5e1 !important;
+            border-left: 4px solid #94a3b8 !important;
+            color: #64748b;
+        }
+
+        .snippet-user .skill-discovery-snippet-label {
+            color: #94a3b8;
+        }
+
+        .snippet-user p {
+            font-style: italic;
+            opacity: 0.85;
             line-height: 1.6;
+        }
+
+        /* AI "Output" Style - Polished & High-tech */
+        .snippet-ai {
+            background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%) !important;
+            border: 1px solid rgba(37, 99, 235, 0.2) !important;
+            border-left: 4px solid #2563eb !important;
+            box-shadow:
+                0 10px 25px -5px rgba(37, 99, 235, 0.1),
+                0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+        }
+
+        .snippet-ai .skill-discovery-snippet-label {
+            color: #2563eb;
+        }
+
+        .ai-badge {
+            background: #2563eb;
+            color: white;
+            padding: 0.15rem 0.5rem;
+            border-radius: 6px;
+            font-size: 0.65rem;
+            font-weight: 700;
+            box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+        }
+
+        .snippet-ai p {
+            color: #1e293b;
+            line-height: 1.7;
         }
 
         .skill-discovery-snippet p+p {
@@ -986,49 +1201,47 @@
 
         .flying-skill {
             position: relative;
-            padding: 0.4rem 0.9rem;
-            border-radius: 999px;
+            padding: 0.5rem 1.1rem;
+            border-radius: 0.75rem;
             font-size: 0.75rem;
-            font-weight: 600;
+            font-weight: 700;
             white-space: nowrap;
             box-shadow:
-                0 4px 12px rgba(0, 0, 0, 0.1),
-                0 2px 4px rgba(0, 0, 0, 0.08);
-            transition: transform 0.2s ease;
-            border: 2px solid;
+                0 4px 6px -1px rgba(0, 0, 0, 0.1),
+                0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid;
             backdrop-filter: blur(8px);
+            letter-spacing: 0.02em;
         }
 
         .flying-skill:hover {
-            transform: scale(1.1) rotate(2deg);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
         }
 
         .flying-skill:nth-child(1) {
-            background: linear-gradient(135deg, rgba(251, 191, 36, 0.4), rgba(245, 158, 11, 0.5));
-            border-color: rgba(245, 158, 11, 0.6);
-            color: #92400e;
-            transform: rotate(-3deg);
+            background: rgba(254, 243, 199, 0.5);
+            border-color: rgba(251, 191, 36, 0.5);
+            color: #b45309;
         }
 
         .flying-skill:nth-child(2) {
-            background: linear-gradient(135deg, rgba(52, 211, 153, 0.4), rgba(16, 185, 129, 0.5));
-            border-color: rgba(16, 185, 129, 0.6);
-            color: #065f46;
-            transform: rotate(4deg);
+            background: rgba(209, 250, 229, 0.5);
+            border-color: rgba(52, 211, 153, 0.5);
+            color: #047857;
         }
 
         .flying-skill:nth-child(3) {
-            background: linear-gradient(135deg, rgba(96, 165, 250, 0.4), rgba(59, 130, 246, 0.5));
-            border-color: rgba(59, 130, 246, 0.6);
-            color: #1e40af;
-            transform: rotate(-2deg);
+            background: rgba(219, 234, 254, 0.5);
+            border-color: rgba(96, 165, 250, 0.5);
+            color: #1d4ed8;
         }
 
         .flying-skill:nth-child(4) {
-            background: linear-gradient(135deg, rgba(167, 139, 250, 0.4), rgba(139, 92, 246, 0.5));
-            border-color: rgba(139, 92, 246, 0.6);
-            color: #5b21b6;
-            transform: rotate(3deg);
+            background: rgba(237, 233, 254, 0.5);
+            border-color: rgba(167, 139, 250, 0.5);
+            color: #6d28d9;
         }
 
         .bullet-points-area {
@@ -1148,69 +1361,91 @@
             line-height: 1.6;
         }
 
-        .testimonials-compact {
+        /* Modern Testimonials Section */
+        .testimonials-modern-section {
+            padding: 6rem 0;
+            background: transparent;
+            position: relative;
+        }
+
+        .testimonials-modern-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin-top: 3rem;
-            width: 70%;
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
-            padding: 0 2rem;
+            gap: 2.5rem;
+            width: 85%;
+            margin: 0 auto;
         }
 
-        .testimonial-compact {
-            border-radius: var(--radius-xl);
-            border: 1px solid rgba(148, 163, 184, 0.4);
-            background: rgba(15, 23, 42, 0.95);
-            padding: 1.8rem 2rem;
-            box-shadow: var(--shadow-soft);
+        .testimonial-modern-card {
+            background: rgba(15, 23, 42, 0.4);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(148, 163, 184, 0.15);
+            border-radius: 2.5rem;
+            padding: 3.5rem;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
-        .testimonial-compact-header {
+        .testimonial-modern-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(96, 165, 250, 0.4);
+            background: rgba(15, 23, 42, 0.6);
+            box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.4);
+        }
+
+        .testimonial-quote-icon {
+            position: absolute;
+            top: 2rem;
+            right: 3rem;
+            color: rgba(37, 99, 235, 0.2);
+            font-size: 5rem;
+            font-family: serif;
+            line-height: 1;
+        }
+
+        .testimonial-modern-quote {
+            font-size: 1.25rem;
+            color: rgba(226, 232, 240, 0.95);
+            line-height: 1.7;
+            font-weight: 500;
+            font-style: italic;
+            margin-bottom: 2.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .testimonial-modern-author {
             display: flex;
             align-items: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
+            gap: 1.5rem;
         }
 
-        .testimonial-compact-avatar {
-            width: 56px;
-            height: 56px;
-            border-radius: 999px;
-            background: linear-gradient(135deg, rgba(96, 165, 250, 0.3), rgba(14, 165, 233, 0.4));
-            border: 2px solid rgba(96, 165, 250, 0.5);
+        .author-avatar {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2563eb, #0ea5e9);
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--blue-light);
-            flex-shrink: 0;
+            font-weight: 700;
+            color: white;
+            box-shadow: 0 10px 20px -5px rgba(37, 99, 235, 0.4);
         }
 
-        .testimonial-compact-info {
-            flex: 1;
+        .author-details h4 {
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
         }
 
-        .testimonial-compact-name {
-            font-weight: 600;
-            font-size: 0.95rem;
-            color: var(--blue-light);
-            margin-bottom: 0.2rem;
-        }
-
-        .testimonial-compact-meta {
-            font-size: 0.85rem;
-            color: rgba(148, 163, 184, 0.96);
-            margin-bottom: 0.4rem;
-        }
-
-        .testimonial-compact-rating {
-            display: flex;
-            gap: 0.2rem;
-            margin-top: 0.3rem;
+        .author-details p {
+            color: #94a3b8;
+            font-size: 0.9rem;
         }
 
         .star {
@@ -1218,10 +1453,15 @@
             font-size: 1rem;
         }
 
-        .testimonial-compact-quote {
-            color: rgba(226, 232, 240, 0.96);
-            line-height: 1.7;
-            font-size: 0.95rem;
+        @media (max-width: 992px) {
+            .testimonials-modern-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .testimonial-modern-card {
+                padding: 2.5rem;
+            }
         }
 
         /* Process section */
@@ -1406,6 +1646,7 @@
             text-transform: uppercase;
             letter-spacing: 0.05em;
         }
+
 
         .resume-item {
             margin-bottom: 0.5rem;
@@ -1667,13 +1908,20 @@
             width: 56px;
             height: 56px;
             border-radius: 0.75rem;
-            background: linear-gradient(135deg, rgba(96, 165, 250, 0.2), rgba(14, 165, 233, 0.3));
-            border: 1px solid rgba(96, 165, 250, 0.3);
+            background: linear-gradient(135deg, #2563eb, #0ea5e9);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
+            color: #ffffff;
             flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+        }
+
+        .process-step-icon svg {
+            width: 28px;
+            height: 28px;
+            stroke-width: 2px;
         }
 
         .process-step-content {
@@ -1805,27 +2053,28 @@
         }
 
         .pricing-card.featured {
-            border: 2px solid rgba(59, 130, 246, 0.6);
+            border: 1px solid #ff2e8c;
             background: rgba(15, 23, 42, 0.8);
-            box-shadow: 0 25px 50px rgba(37, 99, 235, 0.2);
+            box-shadow: 0 0 25px rgba(255, 46, 140, 0.35);
+            animation: pro-glow 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        }
+
+        @keyframes pro-glow {
+
+            0%,
+            100% {
+                box-shadow: 0 0 20px rgba(255, 46, 140, 0.3);
+                border-color: rgba(255, 46, 140, 0.6);
+            }
+
+            50% {
+                box-shadow: 0 0 40px rgba(255, 46, 140, 0.6);
+                border-color: rgba(255, 46, 140, 1);
+            }
         }
 
         .pricing-card.featured::before {
             content: "Most Popular";
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: linear-gradient(135deg, #2563eb, #0ea5e9);
-            color: white;
-            padding: 0.4rem 1.2rem;
-            border-radius: 999px;
-            font-size: 0.75rem;
-            font-weight: 600;
-        }
-
-        .pricing-card.recommended::before {
-            content: "Recommended";
             position: absolute;
             top: -12px;
             left: 50%;
@@ -1852,6 +2101,35 @@
 
         .pricing-price {
             margin-bottom: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .pricing-old-price {
+            font-size: 1.2rem;
+            color: rgba(226, 232, 240, 0.5);
+            text-decoration: line-through;
+            text-decoration-color: rgba(148, 163, 184, 0.8);
+            text-decoration-thickness: 1.5px;
+            margin-bottom: 0.25rem;
+            display: block;
+        }
+
+        .pricing-save-badge {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.2), rgba(20, 184, 166, 0.2));
+            color: #4ade80;
+            padding: 0.3rem 0.8rem;
+            border-radius: 2rem;
+            font-size: 0.8rem;
+            font-weight: 800;
+            border: 1px solid rgba(74, 222, 128, 0.3);
+            margin-top: 0.75rem;
+            box-shadow: 0 4px 12px rgba(34, 197, 94, 0.1);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
         .pricing-amount {
@@ -1990,7 +2268,7 @@
         .acafo-journey-left {
             max-width: 800px;
             width: 100%;
-            text-align: center;
+            text-align: left;
         }
 
         .acafo-journey-kicker {
@@ -2004,8 +2282,6 @@
             font-size: 0.75rem;
             color: var(--blue-light);
             margin-bottom: 0.7rem;
-            margin-left: auto;
-            margin-right: auto;
         }
 
         .acafo-journey-dot {
@@ -2022,7 +2298,7 @@
             margin-bottom: 0.5rem;
             line-height: 1.2;
             color: rgba(226, 232, 240, 0.98);
-            text-align: center;
+            text-align: left;
         }
 
         .acafo-journey-title span {
@@ -2037,8 +2313,8 @@
             color: rgba(203, 213, 225, 0.9);
             max-width: 700px;
             line-height: 1.6;
-            margin: 0 auto;
-            text-align: center;
+            margin-bottom: 3rem;
+            text-align: left;
         }
 
         .acafo-journey-right {
@@ -2047,81 +2323,62 @@
             gap: 1.5rem;
             width: 100%;
             max-width: 1400px;
-            margin: 0 auto;
         }
 
         .acafo-journey-item {
-            border-radius: 1.25rem;
-            padding: 1.5rem;
-            background: linear-gradient(135deg, rgba(147, 197, 253, 0.15), rgba(96, 165, 250, 0.1));
-            border: none;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            box-shadow: 0 4px 12px rgba(96, 165, 250, 0.1);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .acafo-journey-item::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 200px;
-            height: 200px;
-            background: radial-gradient(circle, rgba(96, 165, 250, 0.1), transparent);
-            border-radius: 50%;
-        }
-
-        .acafo-journey-item:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 30px rgba(96, 165, 250, 0.2);
-        }
-
-        .acafo-journey-content-wrapper {
+            border-radius: 1.5rem;
             background: #ffffff;
-            border-radius: 0.875rem;
-            padding: 1.25rem;
-            min-height: 180px;
+            border: 1px solid rgba(148, 163, 184, 0.1);
             display: flex;
             flex-direction: column;
-            gap: 0.75rem;
+            align-items: flex-start;
+            text-align: left;
+            padding: 2rem;
+            gap: 1.2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
             position: relative;
             z-index: 1;
         }
 
+        .acafo-journey-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.1);
+            border-color: rgba(37, 99, 235, 0.2);
+        }
+
         .acafo-journey-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 0.75rem;
-            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(37, 99, 235, 0.15));
+            width: 72px;
+            height: 72px;
+            border-radius: 1.25rem;
+            background: linear-gradient(135deg, #2563eb, #0ea5e9);
             display: flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
             margin-bottom: 0.5rem;
+            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.25);
         }
 
         .acafo-journey-icon svg {
-            width: 22px;
-            height: 22px;
-            stroke: #3b82f6;
-            stroke-width: 2;
+            width: 36px;
+            height: 36px;
+            stroke: #ffffff;
+            stroke-width: 2.5px;
         }
 
         .acafo-journey-label {
-            font-size: 1.1rem;
-            font-weight: 600;
+            font-size: 1.3rem;
+            font-weight: 700;
             color: #0f172a;
             margin-bottom: 0.25rem;
+            line-height: 1.3;
         }
 
         .acafo-journey-caption {
-            font-size: 0.875rem;
+            font-size: 0.95rem;
             color: #475569;
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
         .benefit-card {
@@ -3431,6 +3688,10 @@
             letter-spacing: -0.01em;
         }
 
+        .job-journey-title span {
+            color: #60a5fa;
+        }
+
         .job-journey-subtitle {
             font-size: 1.1rem;
             color: rgba(203, 213, 225, 0.9);
@@ -3604,35 +3865,44 @@
                         <div class="hero-main reveal">
                             <div class="hero-kicker">
                                 <span class="hero-dot"></span>
-                                The only AI job seekers need in Korea
+                                The only AI job platform for foreigners in Korea
                             </div>
                             <h1 class="hero-title">
                                 Are you ready to land a job in Korea in 2026? <span>Let Acafo handle that for
                                     you.</span>
                             </h1>
                             <p class="hero-subtitle">
-                                Most foreigners fail to get hired in Korea not because they lack skills, but because
-                                they miss just 4 critical things. After 300+ consultations, Acafo was built to solve
-                                exactly that.
+                                Acafo is the all-in-one AI platform designed to translate, audit, and position your
+                                profile for the Korean market.
                             </p>
-
-                            <div class="hero-badges-grid">
-                                <div class="hero-badge-grid">Value uniqueness</div>
-                                <div class="hero-badge-grid">Culturally adapted docs</div>
-                                <div class="hero-badge-grid">Advantage as a foreigner</div>
-                                <div class="hero-badge-grid">Strategic positioning</div>
-                            </div>
 
                             <div class="hero-cta-row">
                                 <a href="https://app.acafo.io" class="process-cta-button">
-                                    Yes! I am ready
+                                    Start Your Journey Now
                                 </a>
                             </div>
                         </div>
 
-                        <div class="hero-aside reveal">
-                            <div class="image-placeholder has-image">
-                                <img src="assets/images/Here.jpg" alt="Acafo mockup" />
+                        <div class="hero-visual reveal">
+                            <!-- Floating Card 1: Skill discovery -->
+                            <div class="glass-card card-skill">
+                                <h4>New Skill Found</h4>
+                                <div class="value">Project Management</div>
+                                <div class="tag tag-blue">Cross-cultural Adaptability</div>
+                            </div>
+
+                            <!-- Floating Card 2: ATS Check -->
+                            <div class="glass-card card-ats">
+                                <h4>Resume Optimization</h4>
+                                <div class="value">98% Match</div>
+                                <div class="tag tag-blue">Korean Format Ready</div>
+                            </div>
+
+                            <!-- Floating Card 3: Status -->
+                            <div class="glass-card card-status">
+                                <h4>Best fit job</h4>
+                                <div class="value">B2B liaison sales</div>
+                                <div class="tag tag-green">1st choice</div>
                             </div>
                         </div>
                     </div>
@@ -3684,68 +3954,55 @@
                             </div>
                         </div>
                         <div class="video-cta">
-                            <a href="https://acafo.assist-me.services/" class="btn btn-primary">Get started</a>
+                            <a href="https://acafo.assist-me.services/" class="process-cta-button">Get started</a>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- STATS SECTION -->
-            <section class="stats-section">
-                <div class="stats-grid reveal">
-                    <div class="stats-card">
-                        <div class="stats-number">100%</div>
-                        <div class="stats-text">of beta users discover new skills</div>
-                    </div>
-                    <div class="stats-card">
-                        <div class="stats-number">100%</div>
-                        <div class="stats-text">of beta users reported to get much confidence and have clarity on
-                            finding a job in Korea</div>
-                    </div>
-                </div>
-
-                <div class="testimonials-compact">
-                    <div class="testimonial-compact reveal">
-                        <div class="testimonial-compact-header">
-                            <div class="testimonial-compact-avatar">I</div>
-                            <div class="testimonial-compact-info">
-                                <div class="testimonial-compact-name">Iba</div>
-                                <div class="testimonial-compact-meta">Legal Officer, India</div>
-                                <div class="testimonial-compact-rating">
-                                    <span class="star">★</span>
-                                    <span class="star">★</span>
-                                    <span class="star">★</span>
-                                    <span class="star">★</span>
-                                    <span class="star">★</span>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="testimonial-compact-quote">
+            <!-- MODERN TESTIMONIALS SECTION -->
+            <section class="testimonials-modern-section reveal">
+                <div class="testimonials-modern-grid">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-modern-card">
+                        <div class="testimonial-quote-icon">“</div>
+                        <p class="testimonial-modern-quote">
                             "I thought that I was dumb but no! This shows that I have a lot of skills I didn't even
                             know. I didn't even finish and I already discovered more than 30 skills. It gives me so much
                             confidence."
                         </p>
-                    </div>
-
-                    <div class="testimonial-compact reveal">
-                        <div class="testimonial-compact-header">
-                            <div class="testimonial-compact-avatar">K</div>
-                            <div class="testimonial-compact-info">
-                                <div class="testimonial-compact-name">Kate</div>
-                                <div class="testimonial-compact-meta">E-commerce Specialist, Ukraine</div>
+                        <div class="testimonial-modern-author">
+                            <div class="author-avatar shadow-glow">I</div>
+                            <div class="author-details">
+                                <h4>Iba</h4>
+                                <p>Legal Officer from India</p>
                                 <div class="testimonial-compact-rating">
-                                    <span class="star">★</span>
-                                    <span class="star">★</span>
-                                    <span class="star">★</span>
-                                    <span class="star">★</span>
-                                    <span class="star">★</span>
+                                    <span class="star">★</span><span class="star">★</span><span
+                                        class="star">★</span><span class="star">★</span><span class="star">★</span>
                                 </div>
                             </div>
                         </div>
-                        <p class="testimonial-compact-quote">
-                            "This website is so good, it makes things so easy for me. I don't need to think anymore
-                            about how to write. Thank you a lot."
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-modern-card">
+                        <div class="testimonial-quote-icon">“</div>
+                        <p class="testimonial-modern-quote">
+                            "First interview, got an offer followed by 'Can you start on Monday?' This website is so
+                            good, it makes things so easy for me. I don't need to think anymore about how to write.
+                            Thank you a lot."
                         </p>
+                        <div class="testimonial-modern-author">
+                            <div class="author-avatar shadow-glow">K</div>
+                            <div class="author-details">
+                                <h4>Kate</h4>
+                                <p>E-commerce Specialist from Ukraine</p>
+                                <div class="testimonial-compact-rating">
+                                    <span class="star">★</span><span class="star">★</span><span
+                                        class="star">★</span><span class="star">★</span><span class="star">★</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -3767,7 +4024,7 @@
                             </div>
                         </div>
                         <div class="video-cta">
-                            <a href="https://acafo.assist-me.services/" class="btn btn-primary">Get started</a>
+                            <a href="https://acafo.assist-me.services/" class="process-cta-button">Get started</a>
                         </div>
                     </div>
                 </div>
@@ -3776,9 +4033,10 @@
             <!-- JOB JOURNEY SECTION -->
             <section class="job-journey-section reveal">
                 <div class="job-journey-container">
-                    <h2 class="job-journey-title">Your Job Journey in Korea</h2>
+                    <h2 class="job-journey-title">Five steps designed to get you <span>hired in Korea</span></h2>
                     <p class="job-journey-subtitle">
-                        A clear, structured system designed for how hiring actually works in Korea
+                        A clear, structured system designed based on how hiring actually works and proven strategies in
+                        Korea
                     </p>
 
                     <div class="job-journey-scroll-container">
@@ -3886,105 +4144,6 @@
                 </div>
             </section>
 
-            <!-- HOW ACAFO HELPS - 5 STEP SEQUENCE -->
-            <section class="acafo-steps-section">
-                <div class="acafo-steps-container">
-                    <div class="acafo-steps-header reveal">
-                        <h2 class="process-title">Five steps designed to get you <span
-                                class="process-title-highlight">hired in Korea</span></h2>
-                        <p class="acafo-steps-subtitle">
-                            Acafo does more than format a resume. It listens to your story, coaches you, builds your
-                            skill bank
-                            and helps you apply where you have a real chance.
-                        </p>
-                    </div>
-
-                    <div class="acafo-steps-list">
-                        <!-- Step 1 -->
-                        <div class="acafo-step" data-step="1">
-                            <div class="acafo-step-card">
-                                <div class="acafo-step-marker">1</div>
-                                <div class="acafo-step-content">
-                                    <div class="acafo-step-label">Step 1</div>
-                                    <div class="acafo-step-title">Tell your story. Acafo understands your real value.
-                                    </div>
-                                    <p class="acafo-step-text">
-                                        You describe your experiences in simple language or voice. Acafo analyzes your
-                                        story and uncovers
-                                        strengths, patterns and value that are often hard to see on your own.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Step 2 -->
-                        <div class="acafo-step" data-step="2">
-                            <div class="acafo-step-card">
-                                <div class="acafo-step-marker">2</div>
-                                <div class="acafo-step-content">
-                                    <div class="acafo-step-label">Step 2</div>
-                                    <div class="acafo-step-title">AI coaching asks what recruiters really want to know.
-                                    </div>
-                                    <p class="acafo-step-text">
-                                        Acafo uses targeted follow up questions to help you remember metrics, outcomes
-                                        and concrete actions.
-                                        This coaching step turns a basic story into something much stronger.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Step 3 -->
-                        <div class="acafo-step" data-step="3">
-                            <div class="acafo-step-card">
-                                <div class="acafo-step-marker">3</div>
-                                <div class="acafo-step-content">
-                                    <div class="acafo-step-label">Step 3</div>
-                                    <div class="acafo-step-title">Your story becomes a Korean friendly resume.</div>
-                                    <p class="acafo-step-text">
-                                        Acafo turns everything into clear, structured and measurable bullet points that
-                                        match Korean recruiter
-                                        expectations and basic ATS rules.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Step 4 -->
-                        <div class="acafo-step" data-step="4">
-                            <div class="acafo-step-card">
-                                <div class="acafo-step-marker">4</div>
-                                <div class="acafo-step-content">
-                                    <div class="acafo-step-label">Step 4</div>
-                                    <div class="acafo-step-title">Build your skill bank with Korea focused insights.
-                                    </div>
-                                    <p class="acafo-step-text">
-                                        All skills hidden in your experience are organized into a personal skill bank.
-                                        Acafo highlights the ones
-                                        that match what the Korean job market is looking for.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Step 5 -->
-                        <div class="acafo-step" data-step="5">
-                            <div class="acafo-step-card">
-                                <div class="acafo-step-marker">5</div>
-                                <div class="acafo-step-content">
-                                    <div class="acafo-step-label">Step 5</div>
-                                    <div class="acafo-step-title">Apply where you can actually win.</div>
-                                    <p class="acafo-step-text">
-                                        With your story, skills and context clarified, Acafo helps you focus on roles
-                                        where your profile and
-                                        foreigner advantage stand out instead of applying everywhere with no strategy.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
 
             <!-- SKILL DISCOVERY SECTION -->
             <section id="skill-discovery" class="skill-discovery-section">
@@ -4047,17 +4206,21 @@
                                     <div class="skill-discovery-card-tag">Acafo example</div>
                                 </div>
 
-                                <div class="skill-discovery-snippet">
-                                    <div class="skill-discovery-snippet-label">Your story</div>
-                                    <p>
+                                <div class="skill-discovery-snippet snippet-user">
+                                    <div class="skill-discovery-snippet-label">
+                                        Your story
+                                    </div>
+                                    <p style="color: #64748b; font-style: italic;">
                                         "I helped other foreign students settle in Korea, answered questions about daily
                                         life,
                                         organized small meetups and shared job search tips from my own experience."
                                     </p>
                                 </div>
 
-                                <div class="skill-discovery-snippet">
-                                    <div class="skill-discovery-snippet-label">Generated bullet points & Skills</div>
+                                <div class="skill-discovery-snippet snippet-ai">
+                                    <div class="skill-discovery-snippet-label">
+                                        <span class="ai-badge">AI</span> Acafo's analysis
+                                    </div>
                                     <p>• <strong>Communication & Leadership:</strong> Guided new foreign students
                                         through campus and daily life questions in Korea.</p>
                                     <p>• <strong>Community Building:</strong> Organized regular meetups that connected
@@ -4101,7 +4264,17 @@
                         </h2>
 
                         <div class="process-step">
-                            <div class="process-step-icon">✨</div>
+                            <div class="process-step-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" />
+                                    <path d="M5 3v4" />
+                                    <path d="M19 17v4" />
+                                    <path d="M3 5h4" />
+                                    <path d="M17 19h4" />
+                                </svg>
+                            </div>
                             <div class="process-step-content">
                                 <div class="process-step-label">STEP 1</div>
                                 <div class="process-step-title">Discover your strengths</div>
@@ -4114,7 +4287,14 @@
                         </div>
 
                         <div class="process-step">
-                            <div class="process-step-icon">📥</div>
+                            <div class="process-step-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M3 15v4c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2v-4" />
+                                    <polyline points="17 9 12 14 7 9" />
+                                    <line x1="12" y1="1" x2="12" y2="14" />
+                                </svg>
+                            </div>
                             <div class="process-step-content">
                                 <div class="process-step-label">STEP 2</div>
                                 <div class="process-step-title">Import from your skills bank</div>
@@ -4126,7 +4306,14 @@
                         </div>
 
                         <div class="process-step">
-                            <div class="process-step-icon">📋</div>
+                            <div class="process-step-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                                    <line x1="3" y1="9" x2="21" y2="9" />
+                                    <line x1="9" y1="21" x2="9" y2="9" />
+                                </svg>
+                            </div>
                             <div class="process-step-content">
                                 <div class="process-step-label">STEP 3</div>
                                 <div class="process-step-title">Select a Korean resume template</div>
@@ -4253,7 +4440,6 @@
                         </div>
 
                         <div class="vertical-steps">
-                            <div class="vertical-line"></div>
 
                             <div class="vertical-step" data-order="1">
                                 <div class="step-icon">1</div>
@@ -4288,7 +4474,7 @@
                             <div class="vertical-step" data-order="4">
                                 <div class="step-icon">4</div>
                                 <div class="step-content">
-                                    <h3>Recommends the Jobs You're Most Likely to Get in Korea</h3>
+                                    <h3>Identifies Roles You're Most Likely to Land in Korea</h3>
                                     <p>Based on your experiences, strengths, and skill patterns, the AI suggests roles
                                         where foreigners typically succeed — and where you personally have the best
                                         odds. This removes guesswork and gives you a strategic direction.</p>
@@ -4313,7 +4499,7 @@
                 </div>
                 <div class="section-cta-row">
                     <a href="https://acafo.assist-me.services/" class="process-cta-button">
-                        Get AI Coaching
+                        Get AI Coaching (Coming Soon)
                     </a>
                 </div>
             </section>
@@ -4341,74 +4527,64 @@
                         <div class="acafo-journey-right">
                             <!-- Saving time -->
                             <div class="acafo-journey-item">
-                                <div class="acafo-journey-content-wrapper">
-                                    <div class="acafo-journey-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <circle cx="12" cy="12" r="8" stroke-width="1.6" />
-                                            <path d="M12 8v4l2.5 1.5" stroke-width="1.6" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                        </svg>
-                                    </div>
-                                    <div class="acafo-journey-label">Saving time</div>
-                                    <div class="acafo-journey-caption">
-                                        Skip the blank page. Turn stories into bullet points in minutes, not hours.
-                                    </div>
+                                <div class="acafo-journey-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <polyline points="12 6 12 12 16 14" />
+                                    </svg>
+                                </div>
+                                <div class="acafo-journey-label">Saving time</div>
+                                <div class="acafo-journey-caption">
+                                    Skip the blank page. Turn stories into bullet points in minutes, not hours.
                                 </div>
                             </div>
 
                             <!-- Move with clarity -->
                             <div class="acafo-journey-item">
-                                <div class="acafo-journey-content-wrapper">
-                                    <div class="acafo-journey-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <circle cx="12" cy="12" r="8" stroke-width="1.6" />
-                                            <circle cx="12" cy="12" r="2" stroke-width="1.6" />
-                                            <path d="M12 4v2.5M12 17.5V20M4 12h2.5M17.5 12H20" stroke-width="1.4"
-                                                stroke-linecap="round" />
-                                        </svg>
-                                    </div>
-                                    <div class="acafo-journey-label">Move with clarity</div>
-                                    <div class="acafo-journey-caption">
-                                        Understand what to highlight and how to structure your profile for Korea.
-                                    </div>
+                                <div class="acafo-journey-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <polygon points="3 11 22 2 13 21 11 13 3 11" />
+                                    </svg>
+                                </div>
+                                <div class="acafo-journey-label">Move with clarity</div>
+                                <div class="acafo-journey-caption">
+                                    Understand what to highlight and how to structure your profile for Korea.
                                 </div>
                             </div>
 
                             <!-- Designed for foreigners -->
                             <div class="acafo-journey-item">
-                                <div class="acafo-journey-content-wrapper">
-                                    <div class="acafo-journey-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <circle cx="10" cy="9" r="4" stroke-width="1.6" />
-                                            <path d="M4.5 18.5C5.6 16.4 7.6 15 10 15s4.4 1.4 5.5 3.5" stroke-width="1.6"
-                                                stroke-linecap="round" />
-                                            <path d="M16 5.5a5 5 0 0 1 4 4.9" stroke-width="1.4"
-                                                stroke-linecap="round" />
-                                        </svg>
-                                    </div>
-                                    <div class="acafo-journey-label">Designed for foreigners</div>
-                                    <div class="acafo-journey-caption">
-                                        Built for people who studied, worked and adapted in Korea, not just locals.
-                                    </div>
+                                <div class="acafo-journey-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <line x1="2" y1="12" x2="22" y2="12" />
+                                        <path
+                                            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                                    </svg>
+                                </div>
+                                <div class="acafo-journey-label">Designed for foreigners</div>
+                                <div class="acafo-journey-caption">
+                                    Built for people who studied, worked and adapted in Korea, not just locals.
                                 </div>
                             </div>
 
                             <!-- Only proven strategies -->
                             <div class="acafo-journey-item">
-                                <div class="acafo-journey-content-wrapper">
-                                    <div class="acafo-journey-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M12 4.5 15 6l3.5.5.5 3.5L20 13l-1.5 3-1 3-3-1-2.5 1-2.5-1-3 1-1-3L4 13l1-3.5.5-3.5L9 6l3-1.5Z"
-                                                stroke-width="1.4" stroke-linejoin="round" />
-                                            <path d="M9.5 12.2 11 13.7 14.2 10.5" stroke-width="1.6"
-                                                stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg>
-                                    </div>
-                                    <div class="acafo-journey-label">Only proven strategies</div>
-                                    <div class="acafo-journey-caption">
-                                        Based on real coaching and techniques that already helped foreigners get hired.
-                                    </div>
+                                <div class="acafo-journey-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76z" />
+                                        <polyline points="9 11 12 14 22 4" />
+                                        <path d="m9 11 3 3 10-10" />
+                                    </svg>
+                                </div>
+                                <div class="acafo-journey-label">Only proven strategies</div>
+                                <div class="acafo-journey-caption">
+                                    Based on real coaching and techniques that already helped foreigners get hired.
                                 </div>
                             </div>
                         </div>
@@ -4463,15 +4639,11 @@
                             <div class="pricing-plan-description">For job seekers ready to apply</div>
 
                             <div class="pricing-price">
-                                <div style="display: flex; align-items: baseline; gap: 0.5rem; margin-bottom: 0.5rem;">
-                                    <span
-                                        style="font-size: 1.2rem; color: rgba(148, 163, 184, 0.7); text-decoration: line-through;">$119</span>
-                                    <span class="pricing-amount">$59</span>
-                                </div>
+                                <span class="pricing-old-price">$119</span>
+                                <span class="pricing-amount">$59</span>
                                 <div class="pricing-period">/ 3 months</div>
-                                <div
-                                    style="font-size: 0.85rem; color: var(--accent-green); margin-top: 0.5rem; font-weight: 600;">
-                                    Save 50% - Limited Time
+                                <div class="pricing-save-badge">
+                                    SAVE 50% — LIMITED TIME
                                 </div>
                             </div>
 
@@ -4496,20 +4668,16 @@
                         </div>
 
                         <!-- 1:1 Coaching Plan -->
-                        <div class="pricing-card recommended">
+                        <div class="pricing-card">
                             <div class="pricing-plan-name">1:1 Coaching</div>
                             <div class="pricing-plan-description">Personalized guidance for your job search</div>
 
                             <div class="pricing-price">
-                                <div style="display: flex; align-items: baseline; gap: 0.5rem; margin-bottom: 0.5rem;">
-                                    <span
-                                        style="font-size: 1.2rem; color: rgba(148, 163, 184, 0.7); text-decoration: line-through;">$700</span>
-                                    <span class="pricing-amount">$499</span>
-                                </div>
+                                <span class="pricing-old-price">$700</span>
+                                <span class="pricing-amount">$499</span>
                                 <div class="pricing-period">per month</div>
-                                <div
-                                    style="font-size: 0.85rem; color: var(--accent-green); margin-top: 0.5rem; font-weight: 600;">
-                                    Save 29% - Limited Time
+                                <div class="pricing-save-badge">
+                                    SAVE 29% — LIMITED TIME
                                 </div>
                             </div>
 
@@ -4546,9 +4714,6 @@
                         <div class="final-cta-buttons">
                             <a href="https://acafo.assist-me.services/" class="btn btn-primary">
                                 Start my journey in Korea
-                            </a>
-                            <a href="https://acafo.assist-me.services/" class="btn btn-ghost">
-                                Discover my hidden skills
                             </a>
                         </div>
                     </div>
