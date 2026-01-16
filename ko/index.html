@@ -12,6 +12,13 @@
     <meta property="og:title" content="외국인으로서 한국 취업하기 — 단계별 가이드" />
     <meta property="og:description" content="Acafo는 한국에 있는 외국인들이 자신의 경험을 한국식 이력서로 변환해주는 AI 기반 이력서 작성 도구입니다." />
     <meta property="og:image" content="../assets/images/logo-acafo_0.png" />
+    <meta property="og:url" content="https://acafo.io/ko/" />
+
+    <!-- Canonical & Alternate Languages -->
+    <link rel="canonical" href="https://acafo.io/ko/" />
+    <link rel="alternate" hreflang="en" href="https://acafo.io/" />
+    <link rel="alternate" hreflang="ko" href="https://acafo.io/ko/" />
+    <link rel="alternate" hreflang="x-default" href="https://acafo.io/" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="../assets/images/flavi_acafo.png" />
@@ -54,8 +61,9 @@
             font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
             min-height: 100vh;
             background:
-                radial-gradient(circle at top, rgba(59, 130, 246, 0.6), transparent 50%),
-                radial-gradient(circle at bottom right, rgba(14, 165, 233, 0.5), transparent 55%),
+                radial-gradient(circle at top, rgba(15, 23, 42, 0.9) 0%, transparent 60%),
+                radial-gradient(circle at top, rgba(30, 58, 138, 0.4) 0%, transparent 50%),
+                radial-gradient(circle at bottom right, rgba(14, 165, 233, 0.4), transparent 55%),
                 #020617;
             color: var(--white);
             line-height: 1.6;
@@ -85,7 +93,7 @@
             top: 0;
             z-index: 30;
             backdrop-filter: blur(14px);
-            background: linear-gradient(to bottom, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.75), transparent);
+            background: linear-gradient(to bottom, #020617 0%, rgba(15, 23, 42, 0.9) 60%, transparent);
             border-bottom: 1px solid rgba(148, 163, 184, 0.3);
         }
 
@@ -1389,7 +1397,7 @@
             position: absolute;
             top: 2rem;
             right: 3rem;
-            color: rgba(37, 99, 235, 0.2);
+            color: white;
             font-size: 5rem;
             font-family: serif;
             line-height: 1;
@@ -1399,7 +1407,7 @@
             font-size: 1.25rem;
             color: rgba(226, 232, 240, 0.95);
             line-height: 1.7;
-            font-weight: 500;
+            font-weight: 300;
             font-style: italic;
             margin-bottom: 2.5rem;
             position: relative;
@@ -3806,7 +3814,7 @@
                         <div class="hero-main reveal">
                             <div class="hero-kicker">
                                 <span class="hero-dot"></span>
-                                한국 거주 외국인을 위한 유일한 AI 취업 플랫폼
+                                한국 거주 외국인을 위한 유일한 취업 플랫폼
                             </div>
                             <h1 class="hero-title">
                                 2026년 한국에서 취업할 준비가 되셨나요? <span>Acafo가 도와드립니다.</span>
@@ -3905,11 +3913,15 @@
                     <div class="testimonial-modern-card">
                         <div class="testimonial-quote-icon">“</div>
                         <p class="testimonial-modern-quote">
-                            "제 능력에 확신이 없었는데, 그게 아니었어요! 제가 몰랐던 수많은 스킬을 발견했습니다. 아직 끝나지도 않았는데 이미 30개 이상의 스킬을 발견했습니다. 정말
-                            자신감이 생깁니다."
+                            "제 능력에 확신이 없었는데, 그게 아니었어요! 제가 몰랐던 수많은 스킬을 발견했습니다. 아직 끝나지도 않았는데 이미 <span
+                                style="font-weight: 600; color: white;">30개 이상의 스킬을 발견했습니다</span>. 정말
+                            <span style="font-weight: 600; color: white;">자신감이 생깁니다</span>."
                         </p>
                         <div class="testimonial-modern-author">
-                            <div class="author-avatar shadow-glow">I</div>
+                            <div class="author-avatar shadow-glow" style="overflow: hidden;">
+                                <img src="../assets/images/Iba.jpeg" alt="Iba"
+                                    style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
                             <div class="author-details">
                                 <h4>Iba</h4>
                                 <p>법무 담당자, 인도</p>
@@ -3925,11 +3937,15 @@
                     <div class="testimonial-modern-card">
                         <div class="testimonial-quote-icon">“</div>
                         <p class="testimonial-modern-quote">
-                            "첫 면접에서 오퍼를 받았고 바로 '월요일부터 출근 가능한가요?'라는 질문이 이어졌어요. 이 웹사이트는 정말 좋아요, 제게 모든 것을 쉽게 만들어줍니다. 더 이상
+                            "첫 면접에서 오퍼를 받았고 바로 <span style="font-weight: 600; color: white;">'월요일부터 출근 가능한가요?'</span>라는
+                            질문이 이어졌어요. 이 웹사이트는 정말 좋아요, 제게 모든 것을 쉽게 만들어줍니다. 더 이상
                             어떻게 써야 할지 생각할 필요가 없어요. 정말 감사합니다."
                         </p>
                         <div class="testimonial-modern-author">
-                            <div class="author-avatar shadow-glow">K</div>
+                            <div class="author-avatar shadow-glow" style="overflow: hidden;">
+                                <img src="../assets/images/Kate-.jpeg" alt="Kate"
+                                    style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
                             <div class="author-details">
                                 <h4>Kate</h4>
                                 <p>전자상거래 전문가, 우크라이나</p>
@@ -3985,7 +4001,7 @@
                                 </p>
                             </div>
                             <div class="job-journey-card-visual">
-                                <img src="../assets/images/Skills.png" alt="스킬 명확화 - AI 이력서 빌더">
+                                <img src="../assets/images/Skills.png" alt="Acafo AI가 분석한 외국인 구직자의 핵심 역량 및 강점">
                             </div>
                         </div>
 
@@ -3998,7 +4014,7 @@
                                 </p>
                             </div>
                             <div class="job-journey-card-visual">
-                                <img src="../assets/images/Market demand.png" alt="시장 검증 - 인터뷰 코파일럿">
+                                <img src="../assets/images/Market demand.png" alt="한국 취업 시장 수요 분석 및 외국인 채용 트렌드">
                             </div>
                         </div>
 
@@ -4011,7 +4027,7 @@
                                 </p>
                             </div>
                             <div class="job-journey-card-visual">
-                                <img src="../assets/images/Posotioning.png" alt="전략적 포지셔닝 - 자동 지원">
+                                <img src="../assets/images/Posotioning.png" alt="외국인 인재의 전략적 한국 취업 포지셔닝 및 차별화 전략">
                             </div>
                         </div>
 
@@ -4024,7 +4040,7 @@
                                 </p>
                             </div>
                             <div class="job-journey-card-visual">
-                                <img src="../assets/images/goal.png" alt="타겟 기회 식별 - 직무 매칭">
+                                <img src="../assets/images/goal.png" alt="외국인에게 적합한 한국 기업 및 직무 매칭">
                             </div>
                         </div>
 
@@ -4037,7 +4053,7 @@
                                 </p>
                             </div>
                             <div class="job-journey-card-visual">
-                                <img src="../assets/images/Sucess.png" alt="실행 및 자신감 - 모의 면접">
+                                <img src="../assets/images/Sucess.png" alt="한국 기업 면접 성공 및 최종 합격">
                             </div>
                         </div>
 
@@ -4279,7 +4295,7 @@
             <section id="resume-audit-ai" class="resume-audit-section">
                 <div class="resume-audit-container">
                     <div class="resume-audit-image-container reveal">
-                        <img src="../assets/images/resume_audit.jpg" alt="이력서 검토 AI 평가" />
+                        <img src="../assets/images/resume_audit.jpg" alt="Acafo AI 이력서 진단 - 한국 기업 합격률 분석" />
                     </div>
                     <div class="resume-audit-content reveal">
                         <h2 class="resume-audit-title">
@@ -4398,7 +4414,7 @@
                     </div>
 
                     <div class="vertical-image-area reveal">
-                        <img src="../assets/images/image.png" alt="더 나은 이력서를 위한 AI 코칭" />
+                        <img src="../assets/images/image.png" alt="Acafo AI 코칭을 통한 외국인 한국 취업 성공 사례" />
                     </div>
                 </div>
                 <div class="section-cta-row">
