@@ -2,6 +2,15 @@
 <html lang="ko">
 
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CDDRQQ4W6E"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-CDDRQQ4W6E');
+    </script>
     <meta charset="UTF-8" />
     <title>외국인으로서 한국 취업하기 — 단계별 가이드</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -2120,7 +2129,7 @@
         }
 
         .pricing-card.featured::before {
-            content: "Most Popular";
+            content: "Best Value";
             position: absolute;
             top: -12px;
             left: 50%;
@@ -3788,11 +3797,13 @@
                         <a href="#pricing" class="nav-link">가격</a>
                     </div>
                     <div class="nav-cta">
-                        <a href="/" class="nav-lang" aria-label="Change language">
+                        <a href="/" class="nav-lang" aria-label="Change language"
+                            onclick="gtag('event', 'language_switch', {'target_lang': 'en'})">
                             <span class="nav-lang-icon">🌐</span>
                             <span>EN / KR</span>
                         </a>
-                        <a href="https://app.acafo.io/login" class="btn btn-primary" id="auth-btn">로그인</a>
+                        <a href="https://app.acafo.io/login" class="btn btn-primary" id="auth-btn"
+                            onclick="gtag('event', 'login_click')">로그인</a>
                         <button class="nav-toggle" type="button" aria-label="Toggle navigation">
                             <div class="nav-toggle-bars">
                                 <span></span>
@@ -3814,7 +3825,7 @@
                         <div class="hero-main reveal">
                             <div class="hero-kicker">
                                 <span class="hero-dot"></span>
-                                한국 거주 외국인을 위한 유일한 취업 플랫폼
+                                한국 채용의 코드를 풀다
                             </div>
                             <h1 class="hero-title">
                                 2026년 한국에서 취업할 준비가 되셨나요? <span>Acafo가 도와드립니다.</span>
@@ -3824,7 +3835,8 @@
                             </p>
 
                             <div class="hero-cta-row">
-                                <a href="https://app.acafo.io" class="process-cta-button">
+                                <a href="https://app.acafo.io" class="process-cta-button"
+                                    onclick="gtag('event', 'signup_interest', {'location': 'hero'})">
                                     지금 바로 시작하기
                                 </a>
                             </div>
@@ -4173,7 +4185,8 @@
                     </div>
 
                     <div style="display: flex; justify-content: center; margin-top: 1.5rem;">
-                        <a href="https://app.acafo.io/start" class="process-cta-button">
+                        <a href="https://app.acafo.io/start" class="process-cta-button"
+                            onclick="gtag('event', 'feature_interest', {'feature': 'skill_discovery'})">
                             지금 내 스킬 발견하기
                         </a>
                     </div>
@@ -4256,7 +4269,8 @@
                     </div>
                 </div>
                 <div class="section-cta-row">
-                    <a href="https://app.acafo.io/resume" class="process-cta-button">
+                    <a href="https://app.acafo.io/resume" class="process-cta-button"
+                        onclick="gtag('event', 'feature_interest', {'feature': 'resume_builder'})">
                         지금 한국 이력서 만들기
                     </a>
                 </div>
@@ -4285,7 +4299,8 @@
                     </div>
                 </div>
                 <div class="section-cta-row">
-                    <a href="https://app.acafo.io/resume" class="process-cta-button">
+                    <a href="https://app.acafo.io/resume" class="process-cta-button"
+                        onclick="gtag('event', 'feature_interest', {'feature': 'translation'})">
                         이력서 번역하기
                     </a>
                 </div>
@@ -4311,7 +4326,8 @@
                     </div>
                 </div>
                 <div class="section-cta-row">
-                    <a href="https://audit.acafo.io/" class="process-cta-button">
+                    <a href="https://audit.acafo.io/" class="process-cta-button"
+                        onclick="gtag('event', 'feature_interest', {'feature': 'resume_audit'})">
                         이력서 검토하기
                     </a>
                 </div>
@@ -4418,7 +4434,8 @@
                     </div>
                 </div>
                 <div class="section-cta-row">
-                    <a href="https://app.acafo.io" class="process-cta-button">
+                    <a href="https://app.acafo.io" class="process-cta-button"
+                        onclick="gtag('event', 'feature_interest', {'feature': 'ai_coaching_waitlist'})">
                         AI 코칭 받기 (준비 중)
                     </a>
                 </div>
@@ -4511,7 +4528,8 @@
                     </div>
 
                     <div style="display: flex; justify-content: center; margin-top: 3rem;">
-                        <a href="https://app.acafo.io" class="process-cta-button">
+                        <a href="https://app.acafo.io" class="process-cta-button"
+                            onclick="gtag('event', 'signup_interest', {'location': 'benefits_section'})">
                             Acafo가 어떻게 도와주는지 보기
                         </a>
                     </div>
@@ -4547,7 +4565,8 @@
                                 <li class="pricing-feature">PDF 내보내기 1회</li>
                             </ul>
 
-                            <a href="https://app.acafo.io" class="pricing-cta pricing-cta-secondary">
+                            <a href="https://app.acafo.io" class="pricing-cta pricing-cta-secondary"
+                                onclick="gtag('event', 'signup_interest', {'location': 'pricing_free'})">
                                 무료로 시작하기
                             </a>
                         </div>
@@ -4558,11 +4577,11 @@
                             <div class="pricing-plan-description">본격적인 입사 지원을 위해</div>
 
                             <div class="pricing-price">
-                                <span class="pricing-old-price">$119</span>
+                                <span class="pricing-old-price">$79</span>
                                 <span class="pricing-amount">$59</span>
                                 <div class="pricing-period">/ 3개월</div>
                                 <div class="pricing-save-badge">
-                                    50% 할인 — 한정 기간
+                                    25% 할인 — 한정 기간
                                 </div>
                             </div>
 
@@ -4577,7 +4596,8 @@
                                 <li class="pricing-feature">우선 지원</li>
                             </ul>
 
-                            <a href="https://acafo.assist-me.services/" class="pricing-cta pricing-cta-primary">
+                            <a href="https://acafo.assist-me.services/" class="pricing-cta pricing-cta-primary"
+                                onclick="gtag('event', 'upgrade_click', {'plan': 'pro'})">
                                 프로로 업그레이드
                             </a>
                             <div
@@ -4610,7 +4630,8 @@
                                 <li class="pricing-feature">24/7 지원</li>
                             </ul>
 
-                            <a href="https://app.acafo.io/coaching" class="pricing-cta pricing-cta-primary">
+                            <a href="https://app.acafo.io/coaching" class="pricing-cta pricing-cta-primary"
+                                onclick="gtag('event', 'upgrade_click', {'plan': 'coaching'})">
                                 코칭 시작하기
                             </a>
                         </div>
@@ -4630,7 +4651,8 @@
                             Acafo는 당신의 이야기를 한국에서의 기회로 번역하는 것을 도와줍니다.
                         </p>
                         <div class="final-cta-buttons">
-                            <a href="https://app.acafo.io" class="btn btn-primary">
+                            <a href="https://app.acafo.io" class="btn btn-primary"
+                                onclick="gtag('event', 'signup_interest', {'location': 'footer_cta'})">
                                 한국에서의 여정 시작하기
                             </a>
                         </div>
@@ -4755,6 +4777,13 @@
                     playBtn.addEventListener('click', () => {
                         if (video.paused) {
                             video.play();
+                            // GA Tracking
+                            if (typeof gtag === 'function') {
+                                gtag('event', 'video_interaction', {
+                                    'video_src': video.src,
+                                    'action': 'play'
+                                });
+                            }
                         } else {
                             video.pause();
                         }
